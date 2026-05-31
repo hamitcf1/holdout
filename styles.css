@@ -381,6 +381,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   z-index: 1;
   display: flex;
   justify-content: center;
+  perspective: 1600px;
 }
 .phone {
   position: relative;
@@ -391,7 +392,10 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   padding: 12px;
   border: 1px solid var(--border-strong);
   box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .85), 0 0 60px rgba(123, 240, 130, .08);
+  transform: rotateY(-12deg) rotateX(4deg);
+  transition: transform .5s ease;
 }
+.phone:hover { transform: rotateY(-4deg) rotateX(2deg); }
 .phone__notch {
   position: absolute;
   top: 20px; left: 50%; transform: translateX(-50%);
@@ -802,4 +806,5 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .hero__cue { animation: none; }
+  .phone { transform: none; }
 }
