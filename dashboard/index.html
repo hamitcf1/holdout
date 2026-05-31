@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holdout — İlerleme Panosu</title>
+  <meta name="description" content="Holdout geliştirme ilerleme panosu — istatistikler, hedefler, MVP geri sayımı ve yol haritası." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#080810" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="flame">🔥</span> HOLDOUT
+      <span class="sep">/</span>
+      <span class="sub">İlerleme Panosu</span>
+    </div>
+    <div class="top-right">
+      <span class="badge">DAHİLİ</span>
+      <span id="today" class="today">—</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ===== HERO: MVP COUNTDOWN ===== -->
+    <section class="hero-cd">
+      <span class="glow glow--lime"></span>
+      <div class="cd-main">
+        <div class="cd-label">⏳ MVP'ye kalan</div>
+        <div class="cd-days"><span id="cd-days">—</span><span class="cd-days-u">gün</span></div>
+        <div class="cd-clock">
+          <div class="cd-seg"><b id="cd-h">—</b><span>saat</span></div>
+          <div class="cd-seg"><b id="cd-m">—</b><span>dakika</span></div>
+          <div class="cd-seg"><b id="cd-s">—</b><span>saniye</span></div>
+        </div>
+        <div class="cd-target">🎯 Hedef tarih: <b id="mvp-date">—</b> · <span id="phase-now" class="phase-now">—</span></div>
+      </div>
+      <div class="cd-ring">
+        <svg viewBox="0 0 160 160" width="160" height="160" aria-hidden="true">
+          <circle class="ring-bg" cx="80" cy="80" r="70" />
+          <circle id="ring-fg" class="ring-fg" cx="80" cy="80" r="70" transform="rotate(-90 80 80)" />
+        </svg>
+        <div class="ring-center">
+          <b id="ring-pct">0%</b>
+          <span>MVP ilerlemesi</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="block">
+      <h2 class="block-h">📊 İstatistikler</h2>
+      <div id="stats" class="stat-grid"></div>
+    </section>
+
+    <!-- ===== GOALS ===== -->
+    <section class="block">
+      <h2 class="block-h">🎯 Hedefler</h2>
+      <p class="block-sub">Lansman öncesi; "şu an" değerleri ilerledikçe <code>dashboard.js</code> içinden güncellenir.</p>
+      <div id="goals" class="goal-list"></div>
+    </section>
+
+    <!-- ===== ROADMAP VISUAL ===== -->
+    <section class="block">
+      <h2 class="block-h">🗺️ Yol Haritası — Görsel</h2>
+      <div id="timeline" class="timeline"></div>
+      <div class="tl-legend">
+        <span><i class="dot done"></i> Tamamlandı</span>
+        <span><i class="dot active"></i> Devam ediyor</span>
+        <span><i class="dot todo"></i> Bekliyor</span>
+        <span><i class="dot today-dot"></i> Bugün</span>
+      </div>
+    </section>
+
+    <!-- ===== ROADMAP TEXTUAL ===== -->
+    <section class="block">
+      <h2 class="block-h">📋 Yol Haritası — Detay</h2>
+      <div id="phases" class="phase-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>Son güncelleme: <b id="updated">—</b> · Bu pano <code>dashboard/dashboard.js</code> içindeki <code>CONFIG</code>'ten beslenir — tarihleri, hedefleri ve görevleri oradan düzenle.</span>
+    <span class="foot-links"><a href="../index.html">← Holdout sitesi</a></span>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
