@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holdout — Beat your friend. Build the habit.</title>
+  <meta name="description" content="Holdout turns every habit into a 1-on-1 duel. Invite a friend, check in daily, and whoever breaks the streak first loses." />
+  <meta name="theme-color" content="#080810" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Holdout — Beat your friend. Build the habit." />
+  <meta property="og:description" content="A habit tracker that turns into a fight. Duel a friend, check in daily, whoever breaks first loses." />
+  <meta property="og:site_name" content="Holdout" />
+
+  <!-- Prevent flash of wrong language -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem("streak-lang") || "en";
+        document.documentElement.classList.add("lang-" + l);
+        document.documentElement.lang = l;
+      } catch (e) { document.documentElement.classList.add("lang-en"); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E" />
+</head>
+<body data-page="home">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">
+        <span class="flame">🔥</span> HOLDOUT
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features"><span lang="en">Features</span><span lang="tr">Özellikler</span></a>
+        <a href="#how"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></a>
+        <a href="#pricing"><span lang="en">Pricing</span><span lang="tr">Fiyatlar</span></a>
+        <a href="support.html"><span lang="en">Support</span><span lang="tr">Destek</span></a>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="tr">TR</button>
+        </div>
+        <a class="btn btn--primary" href="#download">
+          <span lang="en">Get the app</span><span lang="tr">Uygulamayı al</span>
+        </a>
+        <button class="nav__burger" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <span class="glow glow--lime"></span>
+    <span class="glow glow--orange"></span>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">
+          <span lang="en">Habit tracker, but make it a fight</span>
+          <span lang="tr">Alışkanlık takipçisi — ama kavga modunda</span>
+        </span>
+
+        <h1>
+          <span lang="en">Beat your <span class="lime">friend.</span><br />Build the <span class="stroke">habit.</span></span>
+          <span lang="tr">Arkadaşını <span class="lime">yen.</span><br />Alışkanlığı <span class="stroke">kazan.</span></span>
+        </h1>
+
+        <p class="hero__sub">
+          <span lang="en">Holdout turns every habit into a 1-on-1 duel. Invite a friend, check in every day, and whoever breaks the streak first loses. Real opponent. Real pressure. Real results.</span>
+          <span lang="tr">Holdout her alışkanlığı birebir düelloya çevirir. Bir arkadaşını davet et, her gün check-in yap; seriyi önce kim koparırsa kaybeder. Gerçek rakip, gerçek baskı, gerçek sonuç.</span>
+        </p>
+
+        <div class="hero__cta" id="download">
+          <div class="store-badges">
+            <a class="store-badge" href="#" aria-label="Download on the App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.4-.89-1.75.03-3.36 1.02-4.26 2.58-1.82 3.16-.46 7.83 1.3 10.39.86 1.25 1.89 2.66 3.23 2.61 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.28 3.14-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.72-1.04-2.75-4.13zM14.47 4.5c.72-.87 1.2-2.08 1.07-3.28-1.03.04-2.28.69-3.02 1.56-.66.77-1.24 2-1.08 3.18 1.15.09 2.33-.59 3.03-1.46z"/></svg>
+              <span class="store-badge__txt">
+                <span class="store-badge__small"><span lang="en">Download on the</span><span lang="tr">İndir</span></span>
+                <span class="store-badge__big">App Store</span>
+              </span>
+            </a>
+            <a class="store-badge" href="#" aria-label="Get it on Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#00C3FF" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3z"/>
+                <path fill="#FFCE00" d="M16 15.3l-3-3.1v-.2l3-3 .1.1 3.6 2c1 .6 1 1.5 0 2.1L16 15.3z"/>
+                <path fill="#00F076" d="M16.1 15.2L13 12 3.6 21.6c.3.4.9.4 1.5.1l11-6.5"/>
+                <path fill="#FF3A44" d="M16.1 8.8L5.1 2.3c-.6-.3-1.2-.3-1.5.1L13 12l3.1-3.2z"/>
+              </svg>
+              <span class="store-badge__txt">
+                <span class="store-badge__small"><span lang="en">Get it on</span><span lang="tr">İndir</span></span>
+                <span class="store-badge__big">Google Play</span>
+              </span>
+            </a>
+          </div>
+          <span class="hero__micro">
+            <span lang="en"><b>Free</b> to start • No credit card • Your opponent is waiting</span>
+            <span lang="tr"><b>Ücretsiz</b> başla • Kart gerekmez • Rakibin seni bekliyor</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Phone mockup: in-app duel screen -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <span class="phone__notch"></span>
+          <div class="phone__screen">
+            <div class="app-topbar">
+              <span>⚔️ <span lang="en">Duel</span><span lang="tr">Düello</span></span>
+              <span class="pill">DAY 19 / 30</span>
+            </div>
+            <div class="duel-card">
+              <div class="duel-habit">
+                <span>🏃</span>
+                <span lang="en">Run 30 min — every day</span>
+                <span lang="tr">Her gün 30 dk koşu</span>
+                <span class="tag">30<span lang="en">d</span><span lang="tr">g</span></span>
+              </div>
+              <div class="vs-row">
+                <div class="fighter lead">
+                  <div class="ava"><span class="crown">👑</span>🧑</div>
+                  <div class="num">19</div>
+                  <div class="who"><span lang="en">You</span><span lang="tr">Sen</span></div>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="fighter">
+                  <div class="ava">🧔</div>
+                  <div class="num">17</div>
+                  <div class="who">Mehmet</div>
+                </div>
+              </div>
+              <div class="progress"><span></span></div>
+              <div class="dot-week">
+                <i class="on">✓</i><i class="on">✓</i><i class="on">✓</i><i class="on">✓</i><i class="on">✓</i><i class="on">✓</i><i>•</i>
+              </div>
+              <div class="trash">
+                <b>🔥 <span lang="en">Trash talk:</span><span lang="tr">Laf sokma:</span></b>
+                <span lang="en"> "Mehmet just checked in. You're 2 days ahead — don't choke now."</span>
+                <span lang="tr"> "Mehmet az önce check-in yaptı. 2 gün öndesin — sakın çuvallama."</span>
+              </div>
+              <div class="app-cta"><span lang="en">Complete today ✓</span><span lang="tr">Bugünü tamamla ✓</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="n">1:1</div>
+          <div class="l"><span lang="en">&amp; group duels</span><span lang="tr">&amp; grup düelloları</span></div>
+        </div>
+        <div class="stat">
+          <div class="n"><span data-count="90" data-suffix="">0</span></div>
+          <div class="l"><span lang="en">day challenges (7–90)</span><span lang="tr">güne kadar (7–90)</span></div>
+        </div>
+        <div class="stat">
+          <div class="n"><span data-count="5">0</span></div>
+          <div class="l"><span lang="en">habit categories</span><span lang="tr">alışkanlık kategorisi</span></div>
+        </div>
+        <div class="stat">
+          <div class="n">∞</div>
+          <div class="l"><span lang="en">streaks with Premium</span><span lang="tr">seri (Premium ile)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span lang="en">The problem</span><span lang="tr">Sorun</span></span>
+        <h2 class="display" style="margin-top:18px">
+          <span lang="en">Willpower is weak.<br /><span class="lime">Rivalry isn't.</span></span>
+          <span lang="tr">İrade zayıftır.<br /><span class="lime">Rekabet değil.</span></span>
+        </h2>
+        <p>
+          <span lang="en">Most habit apps are played alone — and alone, motivation fades by day three. Holdout adds the one thing that actually keeps you showing up: someone you refuse to lose to.</span>
+          <span lang="tr">Çoğu alışkanlık uygulaması yalnız oynanır — ve yalnızken motivasyon üçüncü günde söner. Holdout seni gerçekten devam ettiren tek şeyi ekler: kaybetmeye dayanamayacağın bir rakip.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section class="section" id="features" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span lang="en">Features</span><span lang="tr">Özellikler</span></span>
+        <h2 class="display" style="margin-top:16px">
+          <span lang="en">Built to make you<br />show up</span>
+          <span lang="tr">Seni sahaya<br />çıkarmak için kuruldu</span>
+        </h2>
+      </div>
+
+      <div class="feature-grid reveal">
+        <div class="feature">
+          <div class="ico">⚔️</div>
+          <h3><span lang="en">1-on-1 Duels</span><span lang="tr">Birebir Düellolar</span></h3>
+          <p><span lang="en">Challenge a friend to a head-to-head streak. First to break loses.</span><span lang="tr">Bir arkadaşını kafa kafaya seriye davet et. Önce kopan kaybeder.</span></p>
+        </div>
+        <div class="feature">
+          <span class="premium-tag">Premium</span>
+          <div class="ico">👥</div>
+          <h3><span lang="en">Group Duels</span><span lang="tr">Grup Düelloları</span></h3>
+          <p><span lang="en">Battle 3–10 friends at once. Last one standing takes the crown.</span><span lang="tr">Aynı anda 3–10 arkadaşla yarış. Ayakta kalan son kişi tacı kapar.</span></p>
+        </div>
+        <div class="feature">
+          <div class="ico">✅</div>
+          <h3><span lang="en">Daily Check-in</span><span lang="tr">Günlük Check-in</span></h3>
+          <p><span lang="en">One tap a day. Add a note or a proof photo to make it count.</span><span lang="tr">Günde tek dokunuş. İstersen not ya da kanıt fotoğrafı ekle.</span></p>
+        </div>
+        <div class="feature">
+          <span class="premium-tag">Premium</span>
+          <div class="ico">🛡️</div>
+          <h3><span lang="en">Freeze Protection</span><span lang="tr">Freeze Koruması</span></h3>
+          <p><span lang="en">About to lose a 25-day streak? Freeze it and live to fight another day.</span><span lang="tr">25 günlük serini kaybetmek üzere misin? Dondur ve yarına savaşmak için kal.</span></p>
+        </div>
+        <div class="feature">
+          <div class="ico">🔥</div>
+          <h3><span lang="en">Trash-Talk Alerts</span><span lang="tr">Laf Sokan Bildirimler</span></h3>
+          <p><span lang="en">Smart nudges that push you — and ping you the moment your rival checks in.</span><span lang="tr">Seni dürten akıllı bildirimler — ve rakibin check-in yaptığı an haber verir.</span></p>
+        </div>
+        <div class="feature">
+          <div class="ico">🏆</div>
+          <h3><span lang="en">Leaderboards</span><span lang="tr">Liderlik Tablosu</span></h3>
+          <p><span lang="en">Climb the ranks against your friends and see who's really consistent.</span><span lang="tr">Arkadaşlarına karşı sıralamada yüksel; kim gerçekten istikrarlı gör.</span></p>
+        </div>
+        <div class="feature">
+          <div class="ico">📲</div>
+          <h3><span lang="en">Shareable Wins</span><span lang="tr">Paylaşılabilir Zaferler</span></h3>
+          <p><span lang="en">Turn every victory and milestone into a story-ready card.</span><span lang="tr">Her zaferi ve dönüm noktasını story'ye hazır karta çevir.</span></p>
+        </div>
+        <div class="feature">
+          <div class="ico">📈</div>
+          <h3><span lang="en">Streak Tracking</span><span lang="tr">Seri Takibi</span></h3>
+          <p><span lang="en">Longest streaks, win/loss record, and weekly progress at a glance.</span><span lang="tr">En uzun seriler, galibiyet/mağlubiyet ve haftalık ilerleme tek bakışta.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="section" id="how" style="padding-top:0">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></span>
+        <h2 class="display" style="margin-top:16px">
+          <span lang="en">Three steps to a streak</span>
+          <span lang="tr">Seriye giden üç adım</span>
+        </h2>
+      </div>
+
+      <div class="steps reveal">
+        <div class="step">
+          <div class="ico">🎯</div>
+          <h3><span lang="en">Pick your battle</span><span lang="tr">Savaşını seç</span></h3>
+          <p><span lang="en">Choose a habit and a duration — 7, 30, 60 or 90 days. Running, reading, water, meditation, or your own.</span><span lang="tr">Bir alışkanlık ve süre seç — 7, 30, 60 ya da 90 gün. Koşu, okuma, su, meditasyon ya da kendi alışkanlığın.</span></p>
+        </div>
+        <div class="step">
+          <div class="ico">🤝</div>
+          <h3><span lang="en">Invite your rival</span><span lang="tr">Rakibini davet et</span></h3>
+          <p><span lang="en">Share a link or pick a contact. A duel can't start alone — that's the whole point.</span><span lang="tr">Bir link paylaş ya da rehberden seç. Düello tek başına başlamaz — bütün olay bu.</span></p>
+        </div>
+        <div class="step">
+          <div class="ico">🔥</div>
+          <h3><span lang="en">Check in &amp; win</span><span lang="tr">Check-in yap &amp; kazan</span></h3>
+          <p><span lang="en">Show up every day. Whoever breaks the streak first loses — winner takes the bragging rights.</span><span lang="tr">Her gün kendini göster. Seriyi önce kim koparırsa kaybeder — kazanan hava atar.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SHOWCASE ===================== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span lang="en">Inside the app</span><span lang="tr">Uygulamanın içi</span></span>
+        <h2 class="display" style="margin-top:16px">
+          <span lang="en">Everything is a scoreboard</span>
+          <span lang="tr">Her şey bir skor tablosu</span>
+        </h2>
+      </div>
+
+      <div class="showcase reveal">
+        <div class="shot">
+          <div class="shot__title"><span lang="en">Leaderboard</span><span lang="tr">Liderlik</span></div>
+          <div class="shot__sub"><span lang="en">Who's the most consistent?</span><span lang="tr">En istikrarlı kim?</span></div>
+          <div class="lb-row top"><span class="rank">1</span><span class="ava">🧑</span><span class="name"><span lang="en">You</span><span lang="tr">Sen</span></span><span class="score">19</span></div>
+          <div class="lb-row"><span class="rank">2</span><span class="ava">🧔</span><span class="name">Mehmet</span><span class="score">17</span></div>
+          <div class="lb-row"><span class="rank">3</span><span class="ava">👩</span><span class="name">Ayşe</span><span class="score">12</span></div>
+          <div class="lb-row"><span class="rank">4</span><span class="ava">🧑‍🦱</span><span class="name">Can</span><span class="score">8</span></div>
+        </div>
+
+        <div class="shot">
+          <div class="shot__title"><span lang="en">Your stats</span><span lang="tr">İstatistiklerin</span></div>
+          <div class="shot__sub"><span lang="en">Proof you're showing up</span><span lang="tr">Devam ettiğinin kanıtı</span></div>
+          <div class="mini-stat"><span class="e">🔥</span><span><span lang="en">Longest streak</span><span lang="tr">En uzun seri</span></span><span class="v">42</span></div>
+          <div class="mini-stat"><span class="e">⚔️</span><span><span lang="en">Active duels</span><span lang="tr">Aktif düello</span></span><span class="v">3</span></div>
+          <div class="mini-stat"><span class="e">🏆</span><span><span lang="en">Total wins</span><span lang="tr">Toplam galibiyet</span></span><span class="v">11</span></div>
+          <div class="mini-stat"><span class="e">📅</span><span><span lang="en">Check-ins</span><span lang="tr">Check-in</span></span><span class="v">128</span></div>
+        </div>
+
+        <div class="shot">
+          <div class="shot__title"><span lang="en">Invite</span><span lang="tr">Davet</span></div>
+          <div class="shot__sub"><span lang="en">A duel needs a rival</span><span lang="tr">Düelloya rakip lazım</span></div>
+          <div class="invite-msg">
+            <span lang="en">🔥 I'm challenging you to a <b>30-day running</b> duel! Whoever breaks first loses 😤</span>
+            <span lang="tr">🔥 Seni <b>30 günlük koşu</b> düellosuna davet ediyorum! Önce kim koparsa kaybeder 😤</span>
+          </div>
+          <div class="invite-link">🔗 holdout.site/duel/abc123</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span lang="en">Pricing</span><span lang="tr">Fiyatlandırma</span></span>
+        <h2 class="display" style="margin-top:16px">
+          <span lang="en">Free to fight.<br />Premium to dominate.</span>
+          <span lang="tr">Dövüşmek ücretsiz.<br />Hükmetmek Premium.</span>
+        </h2>
+      </div>
+
+      <div class="pricing-grid reveal">
+        <!-- Free -->
+        <div class="plan plan--free">
+          <div class="plan__name">Free</div>
+          <div class="plan__tagline"><span lang="en">Get in the ring.</span><span lang="tr">Ringe çık.</span></div>
+          <div class="plan__price"><span class="amt">$0</span><span class="per"><span lang="en">forever</span><span lang="tr">sonsuza dek</span></span></div>
+          <ul class="feature-list">
+            <li><span lang="en">Up to 2 active duels</span><span lang="tr">2 aktif düelloya kadar</span></li>
+            <li><span lang="en">Daily check-ins &amp; reminders</span><span lang="tr">Günlük check-in &amp; hatırlatıcılar</span></li>
+            <li><span lang="en">Leaderboards &amp; basic stats</span><span lang="tr">Liderlik tablosu &amp; temel istatistik</span></li>
+            <li><span lang="en">Shareable win cards</span><span lang="tr">Paylaşılabilir zafer kartları</span></li>
+          </ul>
+          <ul class="feature-list muted">
+            <li><span lang="en">Includes ads</span><span lang="tr">Reklam içerir</span></li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="#download"><span lang="en">Start free</span><span lang="tr">Ücretsiz başla</span></a>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan plan--premium">
+          <div class="plan__name lime">Premium</div>
+          <div class="plan__tagline"><span lang="en">No limits. No ads. No mercy.</span><span lang="tr">Sınır yok. Reklam yok. Acıma yok.</span></div>
+
+          <div class="bill-toggle">
+            <button type="button" data-plan="monthly"><span lang="en">Monthly</span><span lang="tr">Aylık</span></button>
+            <button type="button" data-plan="yearly" class="active"><span lang="en">Yearly</span><span lang="tr">Yıllık</span> <span class="save">–50%</span></button>
+            <button type="button" data-plan="lifetime"><span lang="en">Lifetime</span><span lang="tr">Ömür boyu</span></button>
+          </div>
+
+          <div class="plan__price" data-price="monthly" style="display:none">
+            <span class="amt lime">$2.99</span><span class="per">/ <span lang="en">month</span><span lang="tr">ay</span></span>
+          </div>
+          <div class="plan__price" data-price="yearly">
+            <span class="amt lime">$17.99</span><span class="per">/ <span lang="en">year · ~$1.50/mo</span><span lang="tr">yıl · ~$1.50/ay</span></span>
+          </div>
+          <div class="plan__price" data-price="lifetime" style="display:none">
+            <span class="amt lime">$24.99</span><span class="per"><span lang="en">one-time</span><span lang="tr">tek seferlik</span></span>
+          </div>
+
+          <ul class="feature-list">
+            <li><span lang="en"><strong>Unlimited</strong> active duels</span><span lang="tr"><strong>Sınırsız</strong> aktif düello</span></li>
+            <li><span lang="en">Group duels (3–10 players)</span><span lang="tr">Grup düelloları (3–10 kişi)</span></li>
+            <li><span lang="en"><strong>Freeze protection</strong> (3/month)</span><span lang="tr"><strong>Freeze koruması</strong> (3/ay)</span></li>
+            <li><span lang="en">Advanced stats &amp; full history</span><span lang="tr">Gelişmiş istatistik &amp; tam geçmiş</span></li>
+            <li><span lang="en">Custom badges &amp; themes</span><span lang="tr">Özel rozetler &amp; temalar</span></li>
+            <li><span lang="en">Completely ad-free</span><span lang="tr">Tamamen reklamsız</span></li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="#download"><span lang="en">Try 7 days free</span><span lang="tr">7 gün ücretsiz dene</span></a>
+          <div class="plan__note"><span lang="en">Cancel anytime in your App Store / Google Play settings.</span><span lang="tr">İstediğin an App Store / Google Play ayarlarından iptal et.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section cta-final">
+    <span class="glow glow--lime"></span>
+    <div class="container">
+      <h2>
+        <span lang="en">Your opponent<br />is waiting.</span>
+        <span lang="tr">Rakibin<br />seni bekliyor.</span>
+      </h2>
+      <p>
+        <span lang="en">Download Holdout, start your first duel in under 60 seconds, and find out who really has the discipline.</span>
+        <span lang="tr">Holdout'u indir, ilk düellonu 60 saniyenin altında başlat ve disiplinin gerçekte kimde olduğunu öğren.</span>
+      </p>
+      <div class="store-badges">
+        <a class="store-badge" href="#" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.4-.89-1.75.03-3.36 1.02-4.26 2.58-1.82 3.16-.46 7.83 1.3 10.39.86 1.25 1.89 2.66 3.23 2.61 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.28 3.14-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.72-1.04-2.75-4.13zM14.47 4.5c.72-.87 1.2-2.08 1.07-3.28-1.03.04-2.28.69-3.02 1.56-.66.77-1.24 2-1.08 3.18 1.15.09 2.33-.59 3.03-1.46z"/></svg>
+          <span class="store-badge__txt">
+            <span class="store-badge__small"><span lang="en">Download on the</span><span lang="tr">İndir</span></span>
+            <span class="store-badge__big">App Store</span>
+          </span>
+        </a>
+        <a class="store-badge" href="#" aria-label="Get it on Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#00C3FF" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3z"/>
+            <path fill="#FFCE00" d="M16 15.3l-3-3.1v-.2l3-3 .1.1 3.6 2c1 .6 1 1.5 0 2.1L16 15.3z"/>
+            <path fill="#00F076" d="M16.1 15.2L13 12 3.6 21.6c.3.4.9.4 1.5.1l11-6.5"/>
+            <path fill="#FF3A44" d="M16.1 8.8L5.1 2.3c-.6-.3-1.2-.3-1.5.1L13 12l3.1-3.2z"/>
+          </svg>
+          <span class="store-badge__txt">
+            <span class="store-badge__small"><span lang="en">Get it on</span><span lang="tr">İndir</span></span>
+            <span class="store-badge__big">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html"><span class="flame">🔥</span> HOLDOUT</a>
+          <p>
+            <span lang="en">The habit tracker that turns discipline into a duel. Beat your friend, build the habit.</span>
+            <span lang="tr">Disiplini düelloya çeviren alışkanlık takipçisi. Arkadaşını yen, alışkanlığı kazan.</span>
+          </p>
+        </div>
+        <div>
+          <h4><span lang="en">Product</span><span lang="tr">Ürün</span></h4>
+          <ul>
+            <li><a href="#features"><span lang="en">Features</span><span lang="tr">Özellikler</span></a></li>
+            <li><a href="#how"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></a></li>
+            <li><a href="#pricing"><span lang="en">Pricing</span><span lang="tr">Fiyatlar</span></a></li>
+            <li><a href="#download"><span lang="en">Download</span><span lang="tr">İndir</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="en">Support</span><span lang="tr">Destek</span></h4>
+          <ul>
+            <li><a href="support.html"><span lang="en">Help &amp; FAQ</span><span lang="tr">Yardım &amp; SSS</span></a></li>
+            <li><a href="mailto:support@holdout.site">support@holdout.site</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="en">Legal</span><span lang="tr">Yasal</span></h4>
+          <ul>
+            <li><a href="privacy.html"><span lang="en">Privacy Policy</span><span lang="tr">Gizlilik Politikası</span></a></li>
+            <li><a href="terms.html"><span lang="en">Terms of Service</span><span lang="tr">Kullanım Şartları</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Holdout.
+          <span lang="en">All rights reserved.</span><span lang="tr">Tüm hakları saklıdır.</span>
+        </span>
+        <span class="legal-note">
+          <span lang="en">Apple and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC. Holdout is not affiliated with either.</span>
+          <span lang="tr">Apple ve App Store, Apple Inc. ticari markalarıdır. Google Play, Google LLC ticari markasıdır. Holdout hiçbiriyle bağlantılı değildir.</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
