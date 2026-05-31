@@ -134,6 +134,18 @@
     counters.forEach(function (el) { co.observe(el); });
   }
 
+  /* ---------- Fit phone mockup to viewport (scale, no crop) ---------- */
+  function fitPhone() {
+    var phone = document.querySelector(".phone");
+    if (!phone) return;
+    var byH = (window.innerHeight - 170) / 660; // reserve nav + hero padding + scroll cue
+    var byW = (window.innerWidth - 48) / 320;   // never wider than the viewport
+    var ps = Math.max(0.62, Math.min(1, byH, byW));
+    phone.style.zoom = ps.toFixed(3);
+  }
+  fitPhone();
+  window.addEventListener("resize", fitPhone);
+
   /* ---------- Footer year ---------- */
   var yr = document.querySelector("[data-year]");
   if (yr) {

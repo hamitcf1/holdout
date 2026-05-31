@@ -381,22 +381,17 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   z-index: 1;
   display: flex;
   justify-content: center;
-  perspective: 1600px;
 }
 .phone {
   position: relative;
-  height: clamp(440px, calc(100svh - 220px), 640px);
-  width: auto;
-  aspect-ratio: 320 / 660;
+  width: 320px;
+  height: 660px;
   background: linear-gradient(160deg, #1a1a2e, #0b0b16);
   border-radius: 46px;
   padding: 12px;
   border: 1px solid var(--border-strong);
   box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .85), 0 0 60px rgba(123, 240, 130, .08);
-  transform: rotateY(-12deg) rotateX(4deg);
-  transition: transform .5s ease;
 }
-.phone:hover { transform: rotateY(-4deg) rotateX(2deg); }
 .phone__notch {
   position: absolute;
   top: 20px; left: 50%; transform: translateX(-50%);
@@ -785,7 +780,6 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   .hero__copy { max-width: none; margin-inline: auto; }
   .hero__cta { align-items: center; }
   .hero .phone-wrap { margin-top: 12px; }
-  .phone { transform: none; height: auto; width: 300px; max-width: 82vw; }
 
   .stats { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
@@ -807,6 +801,5 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .phone { transform: none; }
   .hero__cue { animation: none; }
 }
