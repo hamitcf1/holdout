@@ -8,7 +8,7 @@
   "use strict";
 
   /* ---------- Language ---------- */
-  var STORE_KEY = "streak-lang";
+  var STORE_KEY = "holdout-lang";
   var META = {
     en: {
       title: "Holdout — Beat your friend. Build the habit.",
