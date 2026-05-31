@@ -11,3 +11,6 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Separate dashboard project — lives in this folder but is its own git repo + GitHub Pages
+dashboard/
