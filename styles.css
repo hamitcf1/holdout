@@ -297,8 +297,10 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(48px, 7vw, 90px);
-  padding-bottom: clamp(56px, 8vw, 110px);
+  min-height: calc(100svh - 70px);
+  display: flex;
+  align-items: center;
+  padding: clamp(20px, 4vh, 48px) 0;
 }
 .hero::before {
   content: "";
@@ -318,19 +320,20 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(28px, 4.5vw, 64px);
   align-items: center;
 }
 
-.hero__copy { max-width: 600px; }
+.hero__copy { max-width: 620px; }
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(54px, 9vw, 112px);
+  font-size: clamp(40px, 5.6vw, 76px);
+  line-height: 1.0;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 22px 0 0;
+  margin: 16px 0 0;
 }
 .hero h1 .stroke {
   -webkit-text-stroke: 2px var(--lime);
@@ -340,7 +343,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 .hero__sub {
   color: var(--text-2);
   font-size: clamp(16px, 2vw, 20px);
-  margin: 24px 0 32px;
+  margin: 18px 0 28px;
   max-width: 520px;
 }
 .hero__cta { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
@@ -352,6 +355,25 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   color: var(--text-2);
 }
 .hero__micro b { color: var(--lime); font-weight: 600; }
+.hero__cue {
+  position: absolute;
+  left: 50%; bottom: clamp(12px, 2.5vh, 26px);
+  transform: translateX(-50%);
+  z-index: 2;
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  color: var(--text-2);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  animation: cueBounce 2.2s ease-in-out infinite;
+  transition: color .2s ease, border-color .2s ease;
+}
+.hero__cue:hover { color: var(--lime); border-color: var(--lime); }
+@keyframes cueBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
 
 /* ---------- Phone mockup ---------- */
 .phone-wrap {
@@ -363,8 +385,8 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 }
 .phone {
   position: relative;
-  width: 320px;
-  max-width: 86vw;
+  height: clamp(440px, calc(100svh - 220px), 640px);
+  width: auto;
   aspect-ratio: 320 / 660;
   background: linear-gradient(160deg, #1a1a2e, #0b0b16);
   border-radius: 46px;
@@ -763,7 +785,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   .hero__copy { max-width: none; margin-inline: auto; }
   .hero__cta { align-items: center; }
   .hero .phone-wrap { margin-top: 12px; }
-  .phone { transform: none; }
+  .phone { transform: none; height: auto; width: 300px; max-width: 82vw; }
 
   .stats { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
@@ -786,4 +808,5 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .phone { transform: none; }
+  .hero__cue { animation: none; }
 }
