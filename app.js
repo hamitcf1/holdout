@@ -1,5 +1,5 @@
 /* ============================================================
-   HOLDOUT — site interactions
+   HOLDOUT - site interactions
    - Bilingual toggle (EN / TR) persisted in localStorage
    - Mobile nav, FAQ accordion, pricing billing toggle
    - Scroll reveal + animated stat counters
@@ -11,11 +11,11 @@
   var STORE_KEY = "holdout-lang";
   var META = {
     en: {
-      title: "Holdout — Beat your friend. Build the habit.",
+      title: "Holdout - Beat your friend. Build the habit.",
       desc: "Holdout turns every habit into a 1-on-1 duel. Invite a friend, check in daily, and whoever breaks the streak first loses."
     },
     tr: {
-      title: "Holdout — Arkadaşını yen. Alışkanlığı kazan.",
+      title: "Holdout - Arkadaşını yen. Alışkanlığı kazan.",
       desc: "Holdout her alışkanlığı birebir düelloya çevirir. Bir arkadaşını davet et, her gün check-in yap; seriyi önce kim koparırsa kaybeder."
     }
   };
