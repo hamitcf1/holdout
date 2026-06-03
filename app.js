@@ -35,6 +35,13 @@
       var md = document.querySelector('meta[name="description"]');
       if (md) md.setAttribute("content", META[lang].desc);
     }
+
+    // Update form placeholders
+    document.querySelectorAll('.waitlist-form .input').forEach(function(input) {
+      if (input.type === "email") {
+        input.placeholder = lang === "tr" ? "E-posta adresiniz" : "Your email address";
+      }
+    });
   }
 
   function currentLang() {
