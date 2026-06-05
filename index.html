@@ -8,7 +8,6 @@
   <meta name="description"
     content="HOLDOUT turns every habit into a 1-on-1 duel. Invite a friend, check in daily, and whoever breaks the streak first loses. Plus solo habits, quit goals, weekly leagues and more." />
   <meta name="theme-color" content="#080810" />
-
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HOLDOUT - First to give up loses." />
@@ -28,7 +27,10 @@
       } catch (e) { document.documentElement.classList.add("lang-en"); }
     })();
   </script>
-
+  <!-- Icons for the app -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -62,7 +64,7 @@
           <button type="button" data-lang="tr">TR</button>
         </div>
         <a class="btn btn--primary" href="#download">
-          <span lang="en">Get the app</span><span lang="tr">Uygulamayı al</span>
+          <span lang="en">Get the app</span><span lang="tr">Uygulamayı indir</span>
         </a>
         <button class="nav__burger" aria-label="Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -81,7 +83,7 @@
       <div class="hero__copy">
         <span class="eyebrow">
           <span lang="en">Habit tracker, but make it a fight</span>
-          <span lang="tr">Alışkanlık takipçisi - ama kavga modunda</span>
+          <span lang="tr">Alışkanlık takipçisi, ama düello modunda</span>
         </span>
 
         <h1>
@@ -96,9 +98,9 @@
           <span lang="en"><strong>HOLD<span class="lime">OUT</span></strong> turns every habit into a 1-on-1 duel. You
             and a rival commit to the same goal - check in every day - and whoever breaks the streak first loses. Real
             pressure. Real results.</span>
-          <span lang="tr"><strong>HOLD<span class="lime">OUT</span></strong> her alışkanlığı birebir düelloya çevirir.
-            Sen ve bir rakip aynı hedefe söz verirsiniz - her gün check-in yaparsınız - seriyi önce kim bozarsa
-            kaybeder. Ciddi baskı, ciddi sonuç.</span>
+          <span lang="tr"><strong>HOLD<span class="lime">OUT</span></strong> her alışkanlığı 1 vs 1 düelloya çevirir.
+            Sen ve bir rakip aynı hedef için söz verirsiniz, her gün check-in yaparsınız ve seriyi önce kim bozarsa
+            kaybeder. <br /> Harbi baskı, ciddi sonuç.</span>
         </p>
 
         <div class="hero__cta" id="download">
@@ -129,16 +131,20 @@
           </div>
           <span class="hero__micro">
             <span lang="en"><b>Free</b> to start · No credit card · 7-day Premium trial included</span>
-            <span lang="tr"><b>Ücretsiz</b> başla · Kart gerekmez · 7 günlük Premium deneme dahil</span>
+            <span lang="tr"><b>Ücretsiz </b>başla · Kredi kartı gerekmez · 7 günlük Premium deneme fırsatıyla</span>
           </span>
         </div>
       </div>
 
       <!-- Phone mockup -->
       <div class="phone-wrap">
-        <div class="phone" style="background:transparent; border:none; box-shadow:none; width:340px; height:auto;">
-          <div class="phone__screen" style="padding:0; background:transparent; border-radius:0; height:auto; overflow:visible;">
-            <img src="assets/mockup-full.png" alt="Holdout App Mockup" style="width:100%; height:auto; display:block; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));">
+        <div class="phone" style="background:transparent; border:none; box-shadow:none; width:35rem; height:auto;">
+          <div class="phone__screen"
+            style="padding:0; background:transparent; border-radius:0; height:auto; overflow:visible;">
+            <img lang="en" src="assets/mockup-full.png" alt="Holdout App Mockup"
+              style="width:100%; height:auto; display:block; filter: drop-shadow(0 30px 60px #7bf0833d);">
+            <img lang="tr" src="assets/mockup-full-tr.png" alt="Holdout App Mockup"
+              style="width:100%; height:auto; display:block; filter: drop-shadow(0 30px 60px #7bf0833d);">
           </div>
         </div>
       </div>
@@ -155,7 +161,7 @@
     <div class="container">
       <div class="stats reveal">
         <div class="stat">
-          <div class="n">⚔️</div>
+          <div class="n"><ion-icon name="checkmark-done-outline"></ion-icon></div>
           <div class="l"><span lang="en">Duels + Solo Habits</span><span lang="tr">Düello + Solo Alışkanlık</span></div>
         </div>
         <div class="stat">
@@ -181,18 +187,19 @@
   <section class="section">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow"><span lang="en">The problem</span><span lang="tr">Sorun</span></span>
+        <span class="eyebrow"><span lang="en">The problem</span><span lang="tr">Problem nedir?</span></span>
         <h2 class="display" style="margin-top:18px">
           <span lang="en">Willpower is weak.<br /><span class="lime">Rivalry isn't.</span></span>
-          <span lang="tr">İrade zayıftır.<br /><span class="lime">Rekabet değil.</span></span>
+          <span lang="tr">İrade tek başına zayıftır.<br /><span class="lime">Rekabet iradeni güçlendirir.</span></span>
         </h2>
         <p>
           <span lang="en">Most habit apps are played alone - and alone, motivation fades by day three. <strong>HOLD<span
                 class="lime">OUT</span></strong> adds the one thing that actually keeps you showing up: someone you
             absolutely refuse to lose to.</span>
-          <span lang="tr">Çoğu alışkanlık uygulaması yalnız oynanır - ve yalnızken motivasyon üçüncü günde söner.
-            <strong>HOLD<span class="lime">OUT</span></strong> seni gerçekten devam ettiren tek şeyi ekler: kaybetmeye
-            dayanamayacağın bir rakip.</span>
+          <span lang="tr">Çoğu alışkanlık uygulaması seni yalnız bırakır, ve yalnızken motivasyonun üçüncü günde
+            kaybolur.
+            <br><br><strong>HOLD<span class="lime">OUT</span></strong> seni gerçekten devam ettiren tek şeyi ekler:
+            kaybetmek istemeyeceğin bir rakip.</span>
         </p>
       </div>
     </div>
@@ -211,17 +218,17 @@
       <div class="path-grid reveal">
         <div class="path-card path-card--duel">
           <div class="path-card-inner">
-            <div class="path-emoji">⚔️</div>
+            <div class="path-emoji"><ion-icon name="checkmark-done-outline"></ion-icon></div>
             <h3><span lang="en">Create a Duel</span><span lang="tr">Düello Oluştur</span></h3>
             <p><span lang="en">Challenge a friend or rival. Shared goal, live progress - first to break the streak
-                loses.</span><span lang="tr">Bir arkadaşına meydan oku. Ortak hedef, canlı ilerleme - seriyi önce kıran
+                loses.</span><span lang="tr">Bir arkadaşına meydan oku. Ortak hedef, canlı ilerleme. Seriyi önce bozan
                 kaybeder.</span></p>
             <ul>
-              <li><span lang="en">Binary or quantity daily goals</span><span lang="tr">Binary veya sayısal günlük
+              <li><span lang="en">Yes/no or quantity daily goals</span><span lang="tr">Evet/hayır veya sayısal günlük
                   hedef</span></li>
               <li><span lang="en">Proof photos + notes</span><span lang="tr">Kanıt fotoğrafı + notlar</span></li>
-              <li><span lang="en">Optional bet: winner decides</span><span lang="tr">Opsiyonel bahis: kazanan karar
-                  verir</span></li>
+              <li><span lang="en">Optional bet: winner decides</span><span lang="tr">İsteğe bağlı bahis: ortak karar
+                  verilir</span></li>
             </ul>
           </div>
         </div>
@@ -230,15 +237,18 @@
             <div class="path-emoji">🔥</div>
             <h3><span lang="en">Solo Habits</span><span lang="tr">Solo Alışkanlıklar</span></h3>
             <p><span lang="en">Build recurring personal habits or quit something - track a private streak, no rival
-                needed.</span><span lang="tr">Tekrarlayan kişisel alışkanlıklar kur ya da bir şeyi bırak - özel seri
+                needed.</span><span lang="tr">Tekrarlayan kişisel alışkanlıklar kur ya da bir şeyi bırak, kendi başına
+                seri
                 tut, rakip gerekmez.</span></p>
             <ul>
-              <li><span lang="en">Custom schedule (which days)</span><span lang="tr">Özel program (hangi günler)</span>
+              <li><span lang="en">Custom schedule (which days)</span><span lang="tr">Özel program (hangi günler için
+                  olacağını seç)</span>
               </li>
-              <li><span lang="en">Quantity tracking: water, steps, pages…</span><span lang="tr">Sayısal takip: su, adım,
-                  sayfa…</span></li>
+              <li><span lang="en">Quantity tracking: water, steps, pages…</span><span lang="tr">Sayısal olarak takip et:
+                  su, adım,
+                  okuma…</span></li>
               <li><span lang="en">Quit goals: clean-day counter + milestones</span><span lang="tr">Bırakma hedefleri:
-                  temiz-gün sayacı + milestoneler</span></li>
+                  Kaç gün uzak duruldu sayacı + hedeflere ulaşınca ödüller</span></li>
             </ul>
           </div>
         </div>
@@ -253,89 +263,90 @@
         <span class="eyebrow"><span lang="en">Features</span><span lang="tr">Özellikler</span></span>
         <h2 class="display" style="margin-top:16px">
           <span lang="en">Built to make you<br /> <span style="color: #7BF082;">show up</span></span>
-          <span lang="tr">Seni sahaya<br /><span style="color: #FF6B35;">çıkarmak için kuruldu</span></span>
+          <span lang="tr">Seni sahaya<br /><span style="color: #FF6B35;">çıkarmak için geliştirildi</span></span>
         </h2>
       </div>
 
       <div class="feature-grid">
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">⚔️</div>
+            <div class="ico"><ion-icon name="checkmark-done-outline"></ion-icon></div>
             <h3><span lang="en">1-on-1 Duels</span><span lang="tr">Birebir Düellolar</span></h3>
             <p><span lang="en">Challenge a friend to a head-to-head streak. Share a link or a 4-digit code. First to
-                break loses.</span><span lang="tr">Bir arkadaşını kafa kafaya seriye davet et. Link ya da 4 haneli kod
-                paylaş. Önce kopan kaybeder.</span></p>
+                break loses.</span><span lang="tr">Bir arkadaşını kafa kafaya mücadeleye davet et. Link ya da 4 haneli kod
+                paylaş. Önce vazgeçen kaybeder.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">🎯</div>
+            <div class="ico"><ion-icon name="person-outline"></ion-icon></div>
             <h3><span lang="en">Solo Habits</span><span lang="tr">Solo Alışkanlıklar</span></h3>
             <p><span lang="en">Private recurring habits with their own detail screen - streak graph, weekly dots,
                 best-ever record, quantity progress bar.</span><span lang="tr">Kendi detay ekranına sahip özel
-                tekrarlayan alışkanlıklar - seri grafiği, haftalık noktalar, en iyi rekor, sayısal ilerleme
-                çubuğu.</span></p>
+                tekrarlayan alışkanlıklar. Seri grafiği, haftalık ilerleme, en iyi rekor.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">🚭</div>
+            <div class="ico"><ion-icon name="close-circle-outline"></ion-icon></div>
             <h3><span lang="en">Quit Goals</span><span lang="tr">Bırakma Hedefleri</span></h3>
             <p><span lang="en">Track sobriety, quitting smoking, cutting sugar - or anything you want to stop. Clean-day
-                counter with milestone celebrations.</span><span lang="tr">Ayıklık, sigarayı bırakma, şekeri kesme - ya
-                da durdurmak istediğin her şeyi takip et. Milestone kutlamalı temiz-gün sayacı.</span></p>
+                counter with milestone celebrations.</span><span lang="tr">Alkolü bırakma, sigarayı bırakma, şekeri
+                kesme, ya
+                da durdurmak istediğin her şeyi takip et. Hedefe ulaşınca kutlama + temiz gün sayacı.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">🏆</div>
+            <div class="ico"><ion-icon name="trophy-outline"></ion-icon></div>
             <h3><span lang="en">Weekly Leagues</span><span lang="tr">Haftalık Ligler</span></h3>
             <p><span lang="en">5 tiers: Bronze → Silver → Gold → Ruby → Diamond. Earn points each week, top 30% promote,
-                bottom 30% drop. Duolingo-style competition.</span><span lang="tr">5 kademe: Bronz → Gümüş → Altın →
-                Yakut → Elmas. Her hafta puan kazan, üst %30 yükselir, alt %30 düşer. Duolingo tarzı rekabet.</span></p>
+                bottom 30% drop.</span><span lang="tr">5 kademe: Bronz → Gümüş → Altın → Yakut → Elmas. Her hafta puan
+                kazan, en
+                tepedeki %30 yükselir, en alttaki %30 düşer. Rekabet burada başlar.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">🪙</div>
+            <div class="ico"><ion-icon name="diamond-outline"></ion-icon></div>
             <h3><span lang="en">Points System</span><span lang="tr">Puan Sistemi</span></h3>
             <p><span lang="en">Earn coins for every duel check-in (+10) and solo habit (+5). Reversible ledger - points
-                reflect your real consistency.</span><span lang="tr">Her düello check-in'i (+10) ve solo alışkanlık (+5)
-                için puan kazan. Geri alınabilir defter - puanlar gerçek tutarlılığını yansıtır.</span></p>
+                reflect your real consistency.</span><span lang="tr">Her düello check-in için (+10) ve solo alışkanlık
+                için (+5) puan kazan. Puanlar gerçek tutarlılığını yansıtır.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">📣</div>
+            <div class="ico"><ion-icon name="medal-outline"></ion-icon></div>
             <h3><span lang="en">Achievement Feed</span><span lang="tr">Başarım Akışı</span></h3>
             <p><span lang="en">When you hit a milestone (5-day streak, duel win, quit milestone) <strong>HOLD<span
                     class="lime">OUT</span></strong> asks if you want to share it. Tap once - it lands on the social
-                feed. Likes are persistent.</span><span lang="tr">Bir milestone'a ulaşınca (5 günlük seri, düello
-                galibiyeti, bırakma milestoneu) <strong>HOLD<span class="lime">OUT</span></strong> paylaşmak isteyip
-                istemediğini sorar. Bir dokun - sosyal feed'e gider. Beğeniler kalıcı.</span></p>
+                feed. Likes are persistent.</span><span lang="tr">Bir başarıya ulaştığında (5 günlük seri, düello
+                zaferi, bırakma başarısı) <strong>HOLD<span class="lime">OUT</span></strong> paylaşmak isteyip
+                istemediğini sorar. Tek dokunuşla sosyal akışa düşer. Beğeniler kalıcıdır.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
-            <div class="ico">🔔</div>
+            <div class="ico"><ion-icon name="notifications-outline"></ion-icon></div>
             <h3><span lang="en">Motivational Notifications</span><span lang="tr">Motivasyon Bildirimleri</span></h3>
             <p><span lang="en">Smart nudges tuned to your active habits: streak alerts, rival check-ins, water
                 reminders, "day's ending" - per-type toggles in Settings.</span><span lang="tr">Aktif alışkanlıklarına
-                göre akıllı bildirimler: seri uyarıları, rakip check-in'leri, su hatırlatıcıları, "gün bitiyor" -
-                Ayarlar'da tür bazlı açma/kapama.</span></p>
+                göre akıllı bildirimler: seri uyarıları, rakip check-in'leri, su hatırlatıcıları, "gün bitiyor" tehlike
+                sinyali. Ayarlar'dan istediğin bildirimi aç/kapa.</span></p>
           </div>
         </div>
         <div class="feature reveal">
           <div class="feature-inner">
             <span class="premium-tag">Premium</span>
-            <div class="ico">📸</div>
+            <div class="ico"><ion-icon name="camera-outline"></ion-icon></div>
             <div class="feature-text">
               <h3><span lang="en">Profile Photos &amp; Premium Avatar</span><span lang="tr">Profil Fotoğrafı &amp;
                   Premium Avatar</span></h3>
-              <p><span lang="en">Upload your real photo as avatar. Free users get emoji avatars; Premium unlocks photo
+              <p><span lang="en">Upload your real photo as avatar. Free users get basic avatars; Premium unlocks photo
                   upload and keeps it even during a grace period.</span><span lang="tr">Gerçek fotoğrafını avatar olarak
-                  yükle. Ücretsiz kullanıcılar emoji avatar alır; Premium fotoğraf yüklemeyi açar ve bunu bir grace
-                  döneminde de korur.</span></p>
+                  yükle. Ücretsiz kullanıcılar basit avatarlar kullanır; Premium fotoğraf yükleme hakkı verir ve bunu
+                  Premium süresi dolsa bile korur.</span></p>
             </div>
           </div>
         </div>
@@ -356,7 +367,7 @@
 
       <div class="steps reveal">
         <div class="step">
-          <div class="ico">🎯</div>
+          <div class="ico"><ion-icon name="flag-outline"></ion-icon></div>
           <h3><span lang="en">Pick your path</span><span lang="tr">Yolunu seç</span></h3>
           <p><span lang="en">Start a 1-on-1 duel against a friend, build a solo habit with a daily goal, or begin a quit
               journey. Choose a duration - 21 days recommended.</span><span lang="tr">Bir arkadaşına karşı birebir
@@ -364,14 +375,14 @@
               gün önerilen.</span></p>
         </div>
         <div class="step">
-          <div class="ico">🤝</div>
+          <div class="ico"><ion-icon name="send-outline"></ion-icon></div>
           <h3><span lang="en">Invite your rival</span><span lang="tr">Rakibini davet et</span></h3>
           <p><span lang="en">Share a link or a 4-digit code. A duel can't start alone - that's the whole point. Solo
               habits work without a rival, by design.</span><span lang="tr">Bir link ya da 4 haneli kod paylaş. Düello
               tek başına başlamaz - bütün olay bu. Solo alışkanlıklar kasıtlı olarak rakipsiz çalışır.</span></p>
         </div>
         <div class="step">
-          <div class="ico">🔥</div>
+          <div class="ico"><ion-icon name="pulse-outline"></ion-icon></div>
           <h3><span lang="en">Check in &amp; win</span><span lang="tr">Check-in yap &amp; kazan</span></h3>
           <p><span lang="en">Show up every day. Earn points, climb the league, share milestones to the feed. Whoever
               breaks the duel streak first - loses.</span><span lang="tr">Her gün kendini göster. Puan kazan, ligde
@@ -395,32 +406,41 @@
       <div class="showcase reveal">
         <div class="shot">
           <div class="shot__title"><span lang="en">Weekly League</span><span lang="tr">Haftalık Lig</span></div>
-          <div class="shot__sub"><span lang="en">🥉 Bronze · this week</span><span lang="tr">🥉 Bronz · bu hafta</span>
+          <div class="shot__sub"><span lang="en"><ion-icon style="color:orange;" name="ribbon"></ion-icon> Bronze ·
+              this week</span><span lang="tr"><ion-icon style="color:orange;" name="ribbon"></ion-icon> Bronz · bu
+              hafta</span>
           </div>
-          <div class="lb-row top"><span class="rank">1</span><span class="ava">🧑</span><span class="name"><span
-                lang="en">You</span><span lang="tr">Sen</span></span><span class="score" style="color:#7BF082">240
-              🪙</span></div>
-          <div class="lb-row"><span class="rank">2</span><span class="ava">🧔</span><span class="name"><span
-                lang="en">Jack</span><span lang="tr">Mehmet</span></span><span class="score">185 🪙</span></div>
-          <div class="lb-row"><span class="rank">3</span><span class="ava">👩</span><span class="name"><span
-                lang="en">Emily</span><span lang="tr">Emine</span></span><span class="score">120 🪙</span></div>
-          <div class="lb-row" style="opacity:.5"><span class="rank">4</span><span class="ava">🧑‍🦱</span><span
-              class="name"><span lang="en">John</span><span lang="tr">Can</span></span><span class="score"
-              style="color:#FF6B35">80 🪙 ▼</span></div>
+          <div class="lb-row top"><span class="rank">1</span><span class="ava"><ion-icon style="color:white;"
+                name="person"></ion-icon></span><span class="name"><span lang="en">You</span><span
+                lang="tr">Sen</span></span><span class="score" style="color:#7BF082">240</span></div>
+          <div class="lb-row"><span class="rank">2</span><span class="ava"><ion-icon style="color:white;"
+                name="person"></ion-icon></span><span class="name"><span lang="en">Jack</span><span
+                lang="tr">Mehmet</span></span><span class="score">185 </span></div>
+          <div class="lb-row"><span class="rank">3</span><span class="ava"><ion-icon style="color:white;"
+                name="person"></ion-icon></span><span class="name"><span lang="en">Emily</span><span
+                lang="tr">Emine</span></span><span class="score">120</span></div>
+          <div class="lb-row" style="opacity:.5"><span class="rank">4</span><span class="ava"><ion-icon
+                style="color:white;" name="person"></ion-icon></span><span class="name"><span lang="en">John</span><span
+                lang="tr">Can</span></span><span class="score" style="color:#FF6B35">80 ▼</span></div>
           <div style="font-size:10px;color:#7BF082;margin-top:6px;font-weight:600">▲ <span lang="en">Top 30% promote to
               Silver</span><span lang="tr">Üst %30 Gümüş'e yükselir</span></div>
         </div>
 
         <div class="shot">
           <div class="shot__title"><span lang="en">Today</span><span lang="tr">Bugün</span></div>
-          <div class="shot__sub"><span lang="en">All commitments in one list</span><span lang="tr">Tüm taahhütler tek
+          <div class="shot__sub"><span lang="en">All commitments in one list</span><span lang="tr">Tüm sözler tek
               listede</span></div>
-          <div class="mini-stat"><span class="e">⚔️</span><span lang="en">Running vs Jack</span><span lang="tr">Koşu vs
-              Mehmet</span><span class="v" style="color:#7BF082">14🔥</span></div>
-          <div class="mini-stat"><span class="e">🎯</span><span>SOLO - <span lang="en">Reading</span><span
-                lang="tr">Okuma</span></span><span class="v" style="color:#4E8FFF">20/30p</span></div>
-          <div class="mini-stat"><span class="e">🚭</span><span lang="en">No smoking</span><span lang="tr">Sigara
-              yok</span><span class="v" style="color:#FF6B35">🔥 47</span></div>
+          <div class="mini-stat"><span class="e"><ion-icon style="color:#64ff4d;"
+                name="fitness-outline"></ion-icon></span><span lang="en">Running vs Jack</span><span lang="tr">Koşu vs
+              Mehmet</span><span lang="en" class="v" style="color:#7BF082">14 days</span><span lang="tr" class="v"
+              style="color:#7BF082">14 gün</span></div>
+          <div class="mini-stat"><span class="e"><ion-icon style="color:#ff6b6b;"
+                name="book"></ion-icon></span><span><span lang="en">Reading</span><span lang="tr">Okuma
+                Alışkanlığı</span></span><span class="v" style="color:#4E8FFF">20/30p</span></div>
+          <div class="mini-stat"><span class="e"><ion-icon style="color:#faff6d;"
+                name="logo-no-smoking"></ion-icon></span><span lang="en">No smoking</span><span lang="tr">Sigarayı
+              bırak</span><span lang="en" class="v" style="color:#FF6B35">47 days</span><span lang="tr" class="v"
+              style="color:#FF6B35">47 gün</span></div>
         </div>
 
         <div class="shot">
@@ -428,12 +448,13 @@
           <div class="shot__sub"><span lang="en">Your win, the feed's fuel</span><span lang="tr">Senin zaferin, feed'in
               yakıtı</span></div>
           <div style="text-align:center;padding:12px 0">
-            <div style="font-size:48px">🔥</div>
+            <div style="font-size:48px"><ion-icon style="color:#FF4B4B;" name="flame"></ion-icon></div>
             <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;margin:4px 0">
               <span lang="en">7-day streak!</span><span lang="tr">7 günlük seri!</span>
             </div>
-            <div style="font-size:12px;color:#7070A0">Running - 7 <span lang="en">days in a row</span><span
-                lang="tr">gün arka arkaya</span></div>
+            <div style="font-size:12px;color:#7070A0"><span lang="en">Running</span><span lang="en"> - </span><span
+                lang="en">7</span><span lang="en">days in a row</span><span lang="tr">Koşu</span><span lang="tr"> -
+              </span><span lang="tr">7 </span><span lang="tr">gün arka arkaya</span></div>
           </div>
           <div class="app-cta" style="font-size:11px;padding:8px"><span lang="en">Share to feed</span><span
               lang="tr">Feed'de paylaş</span></div>
@@ -451,7 +472,7 @@
         <span class="eyebrow"><span lang="en">Pricing</span><span lang="tr">Fiyatlandırma</span></span>
         <h2 class="display" style="margin-top:16px">
           <span lang="en">Free to <span style="color: #FF6B35;">fight</span>.<br />Premium to dominate.</span>
-          <span lang="tr"><span style="color: #FF6B35;">Dövüşmek</span> ücretsiz.<br />Hükmetmek <span
+          <span lang="tr"><span style="color: #FF6B35;">Kapışmak</span> ücretsiz.<br />Zirveye oynamak <span
               style="color: #7BF082;">Premium.</span></span>
         </h2>
       </div>
@@ -459,17 +480,18 @@
       <div class="pricing-grid reveal">
         <!-- Free -->
         <div class="plan plan--free">
-          <div class="plan__name">Free</div>
+          <div lang="en" class="plan__name">Free</div>
+          <div lang="tr" class="plan__name">Ücretsiz</div>
           <div class="plan__tagline"><span lang="en">Get in the ring.</span><span lang="tr">Ringe çık.</span></div>
-          <div class="plan__price"><span class="amt">$0</span><span class="per"><span lang="en">forever</span><span
-                lang="tr">sonsuza dek</span></span></div>
+          <div class="plan__price"><span lang="en" class="amt">$0</span><span lang="tr" class="amt">0₺</span><span
+              lang="en" class="per">forever</span><span lang="tr" class="per">sonsuza dek</span></div>
           <ul class="feature-list">
             <li><span lang="en">Up to 2 active duels</span><span lang="tr">2 aktif düelloya kadar</span></li>
             <li><span lang="en">Solo habits + quit goals (unlimited)</span><span lang="tr">Solo alışkanlık + bırakma
-                hedefi (sınırsız)</span></li>
+                hedefi <br>(cihaz senkronu hariç)</span></li>
             <li><span lang="en">Points system + weekly leagues</span><span lang="tr">Puan sistemi + haftalık
                 ligler</span></li>
-            <li><span lang="en">Social feed + achievement sharing</span><span lang="tr">Sosyal feed + başarım
+            <li><span lang="en">Social feed + achievement sharing</span><span lang="tr">Sosyal akış + başarım
                 paylaşımı</span></li>
             <li><span lang="en">Motivational notifications</span><span lang="tr">Motivasyon bildirimleri</span></li>
             <li><span lang="en">Daily check-ins &amp; streak tracking</span><span lang="tr">Günlük check-in &amp; seri
@@ -477,7 +499,7 @@
           </ul>
           <ul class="feature-list muted">
             <li><span lang="en">Includes ads</span><span lang="tr">Reklam içerir</span></li>
-            <li><span lang="en">Emoji avatars only</span><span lang="tr">Yalnızca emoji avatar</span></li>
+            <li><span lang="en">Basic avatars only</span><span lang="tr">Basit avatarlar</span></li>
           </ul>
           <a class="btn btn--ghost btn--block" href="#download"><span lang="en">Start free</span><span
               lang="tr">Ücretsiz başla</span></a>
@@ -512,15 +534,16 @@
           </div>
 
           <ul class="feature-list">
-            <li><span lang="en">Everything in Free</span><span lang="tr">Free'deki her şey</span></li>
+            <li><span lang="en">Everything in Free</span><span lang="tr">Ücretsiz'deki her şey</span></li>
             <li><span lang="en"><strong>Unlimited</strong> active duels</span><span lang="tr"><strong>Sınırsız</strong>
                 aktif düello</span></li>
-            <li><span lang="en">Profile photo avatar</span><span lang="tr">Profil fotoğrafı avatar</span></li>
-            <li><span lang="en">Steps &amp; water health sync 👑</span><span lang="tr">Adım &amp; su sağlık senkronu
-                👑</span></li>
+            <li><span lang="en">Profile photo avatar</span><span lang="tr">Profil fotoğrafı ve yüksek kalite
+                avatarlar</span></li>
+            <li><span lang="en">Steps &amp; water health sync</span><span lang="tr">Adım &amp; su sağlık senkronu
+              </span></li>
             <li><span lang="en">Completely ad-free</span><span lang="tr">Tamamen reklamsız</span></li>
             <li><span lang="en">3-day grace: keeps your photo when a subscription lapses</span><span lang="tr">3 günlük
-                grace: abonelik düşünce fotoğrafı korur</span></li>
+                süre: abonelik bitince fotoğrafın silinmez</span></li>
           </ul>
           <a class="btn btn--primary btn--block" href="#download"><span lang="en">Try 7 days free</span><span
               lang="tr">7 gün ücretsiz dene</span></a>
@@ -543,8 +566,8 @@
         <span lang="en">Download <strong>HOLD<span class="lime">OUT</span></strong>, start your first duel in under 60
           seconds, and find out who really has the discipline. Duels. Solo habits. Quit goals. All in one place.</span>
         <span lang="tr"><strong>HOLD<span class="lime">OUT</span></strong>'u indir, ilk düellonu 60 saniyenin altında
-          başlat ve disiplinin gerçekte kimde olduğunu öğren. Düellolar. Solo alışkanlıklar. Bırakma hedefleri. Hepsi
-          tek yerde.</span>
+          başlat ve disiplinin gerçekte kimde olduğunu göster. <br> Düellolar. Solo alışkanlıklar. Bırakma hedefleri.
+          Hepsi tek yerde.</span>
       </p>
       <div class="store-badges">
         <a class="store-badge" href="#" aria-label="Download on the App Store">
@@ -586,7 +609,7 @@
             <span lang="en">The habit tracker built on rivalry. Duels, solo habits, quit goals - all in one
               place.</span>
             <span lang="tr">Rekabet üzerine kurulu alışkanlık takipçisi. Düellolar, solo alışkanlıklar, bırakma
-              hedefleri - tek yerde.</span>
+              hedefleri <br> Hepsi tek yerde.</span>
           </p>
         </div>
         <div>
