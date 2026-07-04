@@ -11,12 +11,12 @@
   var STORE_KEY = "holdout-lang";
   var META = {
     en: {
-      title: "Holdout - Beat your friend. Build the habit.",
-      desc: "Holdout turns every habit into a 1-on-1 duel. Invite a friend, check in daily, and whoever breaks the streak first loses."
+      title: "Holdout - Duel your habit. Prove every day.",
+      desc: "Holdout is the competitive habit app with duels, proof review, disputes, XP, Spark, quests, and a live social feed."
     },
     tr: {
-      title: "Holdout - Arkadaşını yen. Alışkanlığı kazan.",
-      desc: "Holdout her alışkanlığı birebir düelloya çevirir. Bir arkadaşını davet et, her gün check-in yap; seriyi önce kim koparırsa kaybeder."
+      title: "Holdout - Alışkanlığınla düello et. Her gün kanıtla.",
+      desc: "Holdout; düello, kanıt kontrolü, itiraz, XP, Spark, görevler ve sosyal feed ile çalışan rekabetçi alışkanlık uygulaması."
     }
   };
 
@@ -39,7 +39,7 @@
     // Update form placeholders
     document.querySelectorAll('.waitlist-form .input').forEach(function(input) {
       if (input.type === "email") {
-        input.placeholder = lang === "tr" ? "E-posta adresiniz" : "Your email address";
+        input.placeholder = lang === "tr" ? "E-posta adresin" : "Your email address";
       }
     });
   }
