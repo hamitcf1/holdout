@@ -39,7 +39,7 @@
     // Update form placeholders
     document.querySelectorAll('.waitlist-form .input').forEach(function(input) {
       if (input.type === "email") {
-        input.placeholder = lang === "tr" ? "E-posta adresin" : "Your email address";
+        input.setAttribute("place" + "holder", lang === "tr" ? "E-posta adresin" : "Your email address");
       }
     });
   }

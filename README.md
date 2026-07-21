@@ -1,8 +1,8 @@
-# 🔥 Holdout — Website
+# Holdout Website
 
 Marketing, support, and legal website for **Holdout** — the habit tracker that turns discipline into a duel. Challenge a friend, check in every day, and whoever breaks the streak first loses.
 
-🌐 Intended domain: **holdout.site**
+Live domain: **holdout.hamitcf.info**
 
 ## Pages
 
@@ -17,7 +17,7 @@ Marketing, support, and legal website for **Holdout** — the habit tracker that
 
 ## Features
 
-- **Bilingual** 🇬🇧 / 🇹🇷 — language toggle in the nav, preference saved in `localStorage`
+- **Bilingual** EN / TR — language toggle in the nav, preference saved in `localStorage`
 - Fully static — no build step, no dependencies
 - Responsive, dark "competitive energy" design
 - Fonts: Bebas Neue + Plus Jakarta Sans
@@ -31,16 +31,13 @@ python -m http.server 4321
 
 ## Deploy (GitHub Pages)
 
-This repo is served via GitHub Pages from the `main` branch (root). Pushing to `main` redeploys automatically.
+Production is served from the separate public `hamitcf1/holdout` repository's `waitlist` branch. Sync this folder to that branch to deploy.
 
-To attach the custom domain `holdout.site` later:
-1. Add a `CNAME` file containing `holdout.site`
-2. Configure DNS at your registrar (4× `A` records to GitHub Pages IPs, or a `CNAME` to `hamitcf1.github.io`)
-3. Set the custom domain under **Settings → Pages**
+The custom domain is configured through `CNAME` and GitHub Pages settings.
 
 ## Before App Store submission
 
-Replace placeholders: contact emails (`@holdout.site`), legal entity name and jurisdiction in `privacy.html` / `terms.html`, official App Store / Google Play badges, and real store download links. Have the legal pages reviewed by a professional.
+Add official App Store / Google Play links once the listings are approved. Have the legal pages reviewed by a professional before launch.
 
 ---
 
