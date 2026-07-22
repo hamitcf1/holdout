@@ -442,6 +442,30 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .phone:hover { transform: rotateY(-4deg) rotateX(2deg); }
 
+.phone--hero {
+  width: clamp(18.5rem, 27vw, 24rem);
+  height: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.phone__screen--hero {
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+}
+
+.hero-mockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(123, 240, 130, .24));
+}
+
 .phone__notch {
   position: absolute;
   top: 20px; left: 50%; transform: translateX(-50%);
@@ -1081,7 +1105,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .hero__copy { max-width: none; margin-inline: auto; }
 
-  .hero .phone { width: min(35rem, 100%) !important; }
+  .hero .phone--hero { width: min(22rem, 100%) !important; }
 
   .hero .eyebrow { max-width: 100%; justify-content: center; }
 
