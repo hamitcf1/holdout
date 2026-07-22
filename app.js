@@ -11,12 +11,12 @@
   var STORE_KEY = "holdout-lang";
   var META = {
     en: {
-      title: "Holdout - Duel your habit. Prove every day.",
-      desc: "Holdout is the competitive habit app with duels, proof review, disputes, XP, Spark, quests, and a live social feed."
+      title: "HOLDOUT - Build habits through 1v1 duels",
+      desc: "Build habits through 1v1 duels or solo goals. Prove daily progress, climb weekly leagues, earn XP and Spark, and invite friends to Holdout."
     },
     tr: {
-      title: "Holdout - Alışkanlığınla düello et. Her gün kanıtla.",
-      desc: "Holdout; düello, kanıt kontrolü, itiraz, XP, Spark, görevler ve sosyal feed ile çalışan rekabetçi alışkanlık uygulaması."
+      title: "HOLDOUT - 1v1 düellolarla alışkanlık kazan",
+      desc: "1v1 düellolar veya solo hedeflerle alışkanlık kazan. Günlük ilerlemeni kanıtla, haftalık liglerde yüksel, XP ve Spark kazan."
     }
   };
 

@@ -12,8 +12,13 @@ Live domain: **holdout.hamitcf.info**
 | `support.html` | Support center / FAQ — App Store **Support URL** |
 | `privacy.html` | Privacy Policy — App Store requirement |
 | `terms.html` | Terms of Service (incl. auto-renewable subscription disclosure) |
+| `delete-account.html` | Public account-deletion instructions |
+| `i/index.html` | Duel invite fallback |
+| `referral/index.html` | Referral universal-link fallback |
+| `.well-known/apple-app-site-association` | iOS universal-link verification |
 | `styles.css` | Design system (colors, typography, components) |
 | `app.js` | Bilingual toggle, FAQ accordion, pricing toggle, animations |
+| `og-image.png` | 1200×630 social preview image |
 
 ## Features
 
@@ -34,6 +39,20 @@ python -m http.server 4321
 Production is served from the separate public `hamitcf1/holdout` repository's `waitlist` branch. Sync this folder to that branch to deploy.
 
 The custom domain is configured through `CNAME` and GitHub Pages settings.
+<<<<<<< Updated upstream
+=======
+
+## Sync contract
+
+`holdout-app-original/desktop-website` is the canonical website snapshot kept with the app release. Before deploying the public website, sync that directory into this repository and review the resulting diff:
+
+```bash
+rsync -av --exclude .DS_Store ../holdout-app-original/desktop-website/ ./
+git diff --check
+```
+
+When app features, pricing, legal disclosures, deep links, or social metadata change, update the canonical snapshot and this public repository in the same release.
+>>>>>>> Stashed changes
 
 ## Before App Store submission
 

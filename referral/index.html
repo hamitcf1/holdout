@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#080810" />
+  <title>Join my Holdout crew</title>
+  <meta name="description" content="A friend invited you to turn your habits into a real accountability race on Holdout." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://holdout.hamitcf.info/referral/" />
+  <meta property="og:title" content="Join my Holdout crew" />
+  <meta property="og:description" content="A friend invited you to turn your habits into a real accountability race on Holdout." />
+  <meta property="og:site_name" content="HOLDOUT" />
+  <meta property="og:image" content="https://holdout.hamitcf.info/og-image.png" />
+  <meta property="og:image:secure_url" content="https://holdout.hamitcf.info/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HOLDOUT wordmark in white and lime on a dark background" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Join my Holdout crew" />
+  <meta name="twitter:description" content="A friend invited you to turn your habits into a real accountability race on Holdout." />
+  <meta name="twitter:image" content="https://holdout.hamitcf.info/og-image.png" />
+  <meta name="twitter:image:alt" content="HOLDOUT wordmark in white and lime on a dark background" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../assets/app-icon.png" />
+  <style>
+    :root{color-scheme:dark;--bg:#080810;--card:#141424;--lime:#7bf082;--text:#eeeeff;--text2:#8b8baf}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(600px 360px at 50% 0,rgba(123,240,130,.12),transparent 65%),var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",sans-serif}
+    main{width:100%;max-width:430px;padding:34px 28px;border:1px solid rgba(238,238,255,.1);border-radius:28px;background:var(--card);text-align:center;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+    .brand{font-family:"Bebas Neue";font-size:24px;letter-spacing:2px}.mark{width:76px;height:76px;margin:28px auto 16px;display:grid;place-items:center;border:1px solid rgba(123,240,130,.28);border-radius:24px;background:rgba(123,240,130,.08);color:var(--lime);font-size:30px;font-weight:700}
+    h1{margin:0;font-family:"Bebas Neue";font-size:42px;line-height:1;letter-spacing:.5px}p{margin:14px auto 26px;max-width:330px;color:var(--text2);font-size:15px;line-height:1.6}.code{margin:0 auto 22px;color:var(--lime);font-family:"Bebas Neue";font-size:28px;letter-spacing:4px}
+    a{display:block;padding:16px;border-radius:16px;background:var(--lime);color:#061206;text-decoration:none;font-weight:700}.alt{margin-top:16px;padding:0;background:transparent;color:var(--text2);font-size:13px}.invalid{color:#ff6b35}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">HOLDOUT</div>
+    <div class="mark" aria-hidden="true">H</div>
+    <h1 id="title">JOIN MY CREW</h1>
+    <p id="body">A friend invited you to turn your habits into a real accountability race.</p>
+    <div class="code" id="code"></div>
+    <a id="open" href="#">Open in Holdout</a>
+    <a class="alt" href="../">Discover Holdout</a>
+  </main>
+  <script>
+    (function(){
+      var code=(new URLSearchParams(location.search).get("code")||"").trim().toUpperCase();
+      var open=document.getElementById("open");
+      if(!/^[A-Z0-9]{8}$/.test(code)){
+        document.getElementById("title").textContent="INVALID INVITE";
+        document.getElementById("body").className="invalid";
+        document.getElementById("body").textContent="This referral link is missing or invalid.";
+        open.style.display="none";
+        return;
+      }
+      document.getElementById("code").textContent=code;
+      open.href="holdout://referral/"+encodeURIComponent(code);
+    })();
+  </script>
+</body>
+</html>
