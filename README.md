@@ -39,8 +39,6 @@ python -m http.server 4321
 Production is served from the separate public `hamitcf1/holdout` repository's `waitlist` branch. Sync this folder to that branch to deploy.
 
 The custom domain is configured through `CNAME` and GitHub Pages settings.
-<<<<<<< Updated upstream
-=======
 
 ## Sync contract
 
@@ -52,7 +50,6 @@ git diff --check
 ```
 
 When app features, pricing, legal disclosures, deep links, or social metadata change, update the canonical snapshot and this public repository in the same release.
->>>>>>> Stashed changes
 
 ## Before App Store submission
 
