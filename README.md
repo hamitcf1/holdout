@@ -18,7 +18,9 @@ Live domain: **holdout.hamitcf.info**
 | `.well-known/apple-app-site-association` | iOS universal-link verification |
 | `styles.css` | Design system (colors, typography, components) |
 | `app.js` | Bilingual toggle, FAQ accordion, pricing toggle, animations |
-| `og-image.png` | 1200×630 social preview image |
+| `og-home-20260723.png` | 1200×630 landing-page social preview |
+| `og-duel-20260723.png` | 1200×630 duel-invite social preview |
+| `og-referral-20260723.png` | 1200×630 referral social preview |
 
 ## Features
 

@@ -4,7 +4,8 @@
       {
         "appIDs": ["TJ5H9SX58K.site.holdout.app"],
         "components": [
-          { "/": "/referral/*", "comment": "Holdout referral links" }
+          { "/": "/referral/*", "comment": "Holdout referral links" },
+          { "/": "/i/*", "comment": "Holdout duel invite links" }
         ]
       }
     ]
