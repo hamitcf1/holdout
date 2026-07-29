@@ -451,7 +451,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .phone--hero {
   z-index: 2;
-  width: clamp(17.5rem, 22vw, 19.25rem);
+  width: clamp(19.5rem, 24vw, 21.5rem);
   height: auto;
   padding: 0;
   background: transparent;
@@ -475,7 +475,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 34px 52px rgba(0, 0, 0, .72)) drop-shadow(0 0 28px rgba(123, 240, 130, .09));
+  filter: drop-shadow(0 34px 52px rgba(0, 0, 0, .72));
 }
 
 .product-stage {
@@ -484,7 +484,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   width: min(100%, 31rem);
   height: 39rem;
   place-items: center;
-  transform: translateY(8rem);
+  transform: translateY(6.2rem);
 }
 
 .phone__notch {
@@ -1104,9 +1104,9 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
 
-  .product-stage { transform: translateY(7.5rem); }
+  .product-stage { transform: translateY(8rem); }
 
-  .hero .phone--hero { width: 17rem; }
+  .hero .phone--hero { width: 19rem; }
 
 }
 
@@ -1130,9 +1130,9 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .hero__copy { max-width: none; margin-inline: auto; }
 
-  .product-stage { width: min(100%, 28rem); transform: none; }
+  .product-stage { width: min(100%, 30rem); transform: none; }
 
-  .hero .phone--hero { width: min(17.25rem, 78vw) !important; }
+  .hero .phone--hero { width: min(19rem, 82vw) !important; }
 
   .hero .eyebrow { max-width: 100%; justify-content: center; }
 
@@ -1173,9 +1173,9 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .waitlist-form .btn { width: 100%; }
 
-  .phone-wrap, .product-stage { min-height: 39rem; height: 39rem; }
+  .phone-wrap, .product-stage { min-height: 41.5rem; height: 41.5rem; }
 
-  .hero .phone--hero { width: min(17.25rem, 78vw) !important; }
+  .hero .phone--hero { width: min(19rem, 82vw) !important; }
 
   .feature:has(.premium-tag) > .feature-inner { padding-right: 0; padding-top: 22px; }
 
