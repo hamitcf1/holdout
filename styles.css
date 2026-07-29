@@ -353,16 +353,10 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: clamp(28px, 4.5vw, 64px);
-  align-items: center;
+  align-items: start;
 }
 
 .hero__copy { max-width: 620px; }
-
-.hero__eyebrow {
-  max-width: min(100%, 31rem);
-  letter-spacing: 1.4px;
-  text-align: left;
-}
 
 .hero h1 {
   font-family: var(--font-display);
@@ -371,7 +365,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   line-height: 1.0;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 16px 0 0;
+  margin: 0;
 }
 
 .hero h1 .stroke {
@@ -430,7 +424,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   z-index: 1;
   display: flex;
   min-height: 39rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -451,7 +445,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .phone--hero {
   z-index: 2;
-  width: clamp(19.5rem, 24vw, 21.5rem);
+  width: clamp(22rem, 25vw, 25rem);
   height: auto;
   padding: 0;
   background: transparent;
@@ -463,7 +457,8 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .phone--hero:hover { transform: translateY(-6px); }
 
-.phone__screen--hero {
+.phone.phone--hero .phone__screen--hero {
+  display: flow-root;
   height: auto;
   padding: 0;
   overflow: visible;
@@ -475,6 +470,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   display: block;
   width: 100%;
   height: auto;
+  margin-top: -18.34%;
   filter: drop-shadow(0 34px 52px rgba(0, 0, 0, .72));
 }
 
@@ -482,9 +478,9 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   position: relative;
   display: grid;
   width: min(100%, 31rem);
-  height: 39rem;
-  place-items: center;
-  transform: translateY(6.2rem);
+  height: auto;
+  place-items: start center;
+  transform: none;
 }
 
 .phone__notch {
@@ -1104,20 +1100,57 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
 
-  .product-stage { transform: translateY(8rem); }
+  .product-stage { transform: none; }
 
-  .hero .phone--hero { width: 19rem; }
+  .hero .phone--hero { width: 21rem; }
 
 }
 
 @media (max-width: 860px) {
+  .nav__inner {
+    height: 60px;
+    gap: 10px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  .brand > span {
+    font-size: 23px !important;
+    letter-spacing: .8px !important;
+  }
+
   .nav__links { display: none; }
 
-  .nav__burger { display: grid; place-items: center; }
+  .nav__actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .lang-toggle {
+    padding: 2px;
+  }
+
+  .lang-toggle button {
+    min-width: 32px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .nav__burger {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 9px;
+  }
 
   .nav.open .nav__links {
     display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
-    position: absolute; top: 70px; left: 0; right: 0;
+    position: absolute; top: 60px; left: 0; right: 0;
     background: var(--surface); border-bottom: 1px solid var(--border);
     padding: 18px var(--gutter); margin: 0;
   }
@@ -1132,7 +1165,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .product-stage { width: min(100%, 30rem); transform: none; }
 
-  .hero .phone--hero { width: min(19rem, 82vw) !important; }
+  .hero .phone--hero { width: min(21.5rem, 88vw) !important; }
 
   .hero .eyebrow { max-width: 100%; justify-content: center; }
 
@@ -1173,9 +1206,9 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .waitlist-form .btn { width: 100%; }
 
-  .phone-wrap, .product-stage { min-height: 41.5rem; height: 41.5rem; }
+  .phone-wrap, .product-stage { min-height: 0; height: auto; }
 
-  .hero .phone--hero { width: min(19rem, 82vw) !important; }
+  .hero .phone--hero { width: min(21.5rem, 88vw) !important; }
 
   .feature:has(.premium-tag) > .feature-inner { padding-right: 0; padding-top: 22px; }
 
