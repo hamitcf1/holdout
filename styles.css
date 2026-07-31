@@ -837,6 +837,58 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .plan__price .amt.lime { color: var(--lime); }
 
+.pricing-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: -24px 0 20px;
+}
+
+.pricing-toolbar__label {
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.currency-toggle {
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.currency-toggle button {
+  min-width: 48px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, transform .15s ease;
+}
+
+.currency-toggle button:hover { color: var(--text); }
+
+.currency-toggle button:active { transform: scale(.96); }
+
+.currency-toggle button.active {
+  background: var(--lime);
+  color: #061206;
+}
+
+.currency-toggle button:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
 .bill-toggle { display: inline-flex; gap: 4px; padding: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; margin: 6px 0 18px; flex-wrap: wrap; }
 
 .bill-toggle button {
@@ -1205,6 +1257,20 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   .waitlist-form__row { flex-direction: column; }
 
   .waitlist-form .btn { width: 100%; }
+
+  .pricing-toolbar {
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: -18px;
+  }
+
+  .pricing-toolbar__label { display: none; }
+
+  .currency-toggle {
+    width: 100%;
+  }
+
+  .currency-toggle button { flex: 1; }
 
   .phone-wrap, .product-stage { min-height: 0; height: auto; }
 

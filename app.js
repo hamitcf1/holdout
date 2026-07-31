@@ -1,7 +1,7 @@
 /* ============================================================
    HOLDOUT - site interactions
    - Bilingual toggle (EN / TR) persisted in localStorage
-   - Mobile nav, FAQ accordion, pricing billing toggle
+   - Mobile nav, FAQ accordion, pricing and currency toggles
    - Scroll reveal + animated stat counters
    ============================================================ */
 (function () {
@@ -18,6 +18,13 @@
       title: "HOLDOUT - 1v1 düellolarla alışkanlık kazan",
       desc: "1v1 düellolar veya solo hedeflerle alışkanlık kazan. Günlük ilerlemeni kanıtla, haftalık liglerde yüksel, XP ve Spark kazan."
     }
+  };
+  var CURRENCY_KEY = "holdout-currency";
+  var selectedCurrency = "USD";
+  var SITE_PRICES = {
+    USD: { free: 0, monthly: 2.99, yearly: 17.99, lifetime: 24.99 },
+    EUR: { free: 0, monthly: 2.99, yearly: 17.99, lifetime: 24.99 },
+    TRY: { free: 0, monthly: 79.99, yearly: 479.99, lifetime: 699.99 }
   };
 
   function setLang(lang) {
@@ -42,20 +49,76 @@
         input.setAttribute("place" + "holder", lang === "tr" ? "E-posta adresin" : "Your email address");
       }
     });
+    renderSitePrices();
   }
 
   function currentLang() {
     try { return localStorage.getItem(STORE_KEY) || "en"; } catch (e) { return "en"; }
   }
 
+  function currentCurrency() {
+    try {
+      var saved = localStorage.getItem(CURRENCY_KEY);
+      return SITE_PRICES[saved] ? saved : "USD";
+    } catch (e) {
+      return "USD";
+    }
+  }
+
+  function formatSitePrice(amount, currency) {
+    var locale = currentLang() === "tr" ? "tr-TR" : "en-US";
+    try {
+      return new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency: currency,
+        currencyDisplay: "narrowSymbol",
+        minimumFractionDigits: amount === 0 ? 0 : 2,
+        maximumFractionDigits: amount === 0 ? 0 : 2
+      }).format(amount);
+    } catch (e) {
+      var symbols = { USD: "$", EUR: "€", TRY: "₺" };
+      return symbols[currency] + (amount === 0 ? "0" : amount.toFixed(2));
+    }
+  }
+
+  function renderSitePrices() {
+    var prices = SITE_PRICES[selectedCurrency] || SITE_PRICES.USD;
+    document.querySelectorAll("[data-site-price]").forEach(function (el) {
+      var plan = el.getAttribute("data-site-price");
+      if (Object.prototype.hasOwnProperty.call(prices, plan)) {
+        el.textContent = formatSitePrice(prices[plan], selectedCurrency);
+      }
+    });
+  }
+
+  function setCurrency(currency) {
+    selectedCurrency = SITE_PRICES[currency] ? currency : "USD";
+    try { localStorage.setItem(CURRENCY_KEY, selectedCurrency); } catch (e) {}
+    document.querySelectorAll("[data-currency]").forEach(function (button) {
+      var active = button.getAttribute("data-currency") === selectedCurrency;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+    renderSitePrices();
+  }
+
   // Apply once DOM is ready (class was pre-set inline to avoid flash)
+  selectedCurrency = currentCurrency();
   setLang(currentLang());
+  setCurrency(selectedCurrency);
 
   document.addEventListener("click", function (e) {
     var btn = e.target.closest("[data-lang]");
     if (!btn) return;
     e.preventDefault();
     setLang(btn.getAttribute("data-lang"));
+  });
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-currency]");
+    if (!btn) return;
+    e.preventDefault();
+    setCurrency(btn.getAttribute("data-currency"));
   });
 
   /* ---------- Mobile nav ---------- */

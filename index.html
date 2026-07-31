@@ -53,7 +53,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260729-3" />
+  <link rel="stylesheet" href="styles.css?v=20260731-1" />
   <link rel="icon" type="image/png" href="assets/app-icon.png" />
 </head>
 
@@ -425,14 +425,26 @@
         </h2>
       </div>
 
+      <div class="pricing-toolbar reveal">
+        <span class="pricing-toolbar__label">
+          <span lang="en">Display currency</span>
+          <span lang="tr">Gösterim para birimi</span>
+        </span>
+        <div class="currency-toggle" role="group" aria-label="Display currency">
+          <button type="button" data-currency="USD" class="active" aria-pressed="true">USD</button>
+          <button type="button" data-currency="EUR" aria-pressed="false">EUR</button>
+          <button type="button" data-currency="TRY" aria-pressed="false">TRY</button>
+        </div>
+      </div>
+
       <div class="pricing-grid reveal">
         <!-- Free -->
         <div class="plan plan--free">
           <div lang="en" class="plan__name">Free</div>
           <div lang="tr" class="plan__name">Ücretsiz</div>
           <div class="plan__tagline"><span lang="en">Core features for everyday use.</span><span lang="tr">Günlük kullanım için temel özellikler.</span></div>
-          <div class="plan__price"><span lang="en" class="amt">$0</span><span lang="tr" class="amt">0₺</span><span
-              lang="en" class="per">forever</span><span lang="tr" class="per">sonsuza dek</span></div>
+          <div class="plan__price"><span class="amt" data-site-price="free">$0</span><span lang="en"
+              class="per">forever</span><span lang="tr" class="per">sonsuza dek</span></div>
           <ul class="feature-list">
             <li><span lang="en">Up to 2 active duels</span><span lang="tr">2 aktif düelloya kadar</span></li>
             <li><span lang="en">Duel creation, review, disputes</span><span lang="tr">Düello oluşturma, inceleme, itiraz</span></li>
@@ -465,15 +477,15 @@
           </div>
 
           <div class="plan__price" data-price="monthly" style="display:none">
-            <span class="amt lime">₺2,99</span><span class="per">/ <span lang="en">month</span><span
+            <span class="amt lime" data-site-price="monthly">$2.99</span><span class="per">/ <span lang="en">month</span><span
                 lang="tr">ay</span></span>
           </div>
           <div class="plan__price" data-price="yearly">
-            <span class="amt lime">₺17,99</span><span class="per">/ <span lang="en">year</span><span
+            <span class="amt lime" data-site-price="yearly">$17.99</span><span class="per">/ <span lang="en">year</span><span
                 lang="tr">yıl</span></span>
           </div>
           <div class="plan__price" data-price="lifetime" style="display:none">
-            <span class="amt lime">₺24,99</span><span class="per"><span lang="en">one-time</span><span lang="tr">tek
+            <span class="amt lime" data-site-price="lifetime">$24.99</span><span class="per"><span lang="en">one-time</span><span lang="tr">tek
                 seferlik</span></span>
           </div>
 
@@ -489,8 +501,8 @@
           </ul>
           <a class="btn btn--primary btn--block" href="#waitlist"><span lang="en">Join the waitlist</span><span
               lang="tr">Bekleme listesine katıl</span></a>
-          <div class="plan__note"><span lang="en">Store pricing may vary by region. Cancel anytime in App Store / Google Play settings.</span><span
-              lang="tr">Mağaza fiyatları bölgeye göre değişebilir. İstediğin an App Store / Google Play ayarlarından iptal et.</span></div>
+          <div class="plan__note"><span lang="en">Website prices are indicative. App Store or Google Play shows and charges your storefront's localized price. Cancel anytime in store settings.</span><span
+              lang="tr">Website fiyatları gösterim amaçlıdır. App Store veya Google Play, mağaza bölgenize özel yerelleştirilmiş fiyatı gösterir ve tahsil eder. Mağaza ayarlarından istediğiniz an iptal edebilirsiniz.</span></div>
         </div>
       </div>
     </div>
@@ -582,7 +594,7 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260729-2"></script>
+  <script src="app.js?v=20260731-1"></script>
 </body>
 
 </html>
