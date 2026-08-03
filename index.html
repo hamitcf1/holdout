@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HOLDOUT - Win together, or outlast your rival</title>
   <meta name="description"
-    content="Build or quit habits through proof-based duels. Complete together for a 1.5× Co-Win reward, or outlast your rival." />
+    content="Build or quit habits through proof-based duels. Complete together for a Co-Win; eligible wager duels can earn a 1.5× Spark return." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#080810" />
   <link rel="canonical" href="https://holdout.hamitcf.info/" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://holdout.hamitcf.info/" />
-  <meta property="og:title" content="HOLDOUT - Build habits through 1v1 duels" />
+  <meta property="og:title" content="HOLDOUT - Win together, or outlast your rival" />
   <meta property="og:description"
-    content="Duel a friend or start solo. Prove daily progress, climb weekly leagues, and earn XP and Spark for staying consistent." />
+    content="Build or quit habits with proof-based duels. Both players can complete and win together; eligible wager duels can earn a Co-Win bonus." />
   <meta property="og:site_name" content="HOLDOUT" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="tr_TR" />
@@ -28,9 +28,9 @@
   <meta property="og:image:alt" content="Holdout habit duel app with the message Duel your habit, prove it daily" />
   <!-- X / Twitter cards. Threads and Instagram use the Open Graph tags above. -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HOLDOUT - Build habits through 1v1 duels" />
+  <meta name="twitter:title" content="HOLDOUT - Win together, or outlast your rival" />
   <meta name="twitter:description"
-    content="Duel a friend or start solo. Prove daily progress, climb weekly leagues, and earn XP and Spark." />
+    content="Build or quit habits with proof-based duels. Complete together for a Co-Win, or outlast your rival." />
   <meta name="twitter:url" content="https://holdout.hamitcf.info/" />
   <meta name="twitter:image" content="https://holdout.hamitcf.info/og-home-20260723.png" />
   <meta name="twitter:image:alt" content="Holdout habit duel app with the message Duel your habit, prove it daily" />
@@ -102,14 +102,15 @@
         </h1>
 
         <p class="hero__sub">
-          <span lang="en">Build a good habit or quit a bad one through a shared race. Show up with proof. If both of you complete the challenge, both earn a <strong>1.5× Co-Win reward</strong>.</span>
-          <span lang="tr">İyi bir alışkanlık kazan ya da kötü bir alışkanlığı birlikte bırak. Kanıtınla devam et. İkiniz de challenge'ı tamamlarsanız <strong>1.5× Ortak Galibiyet ödülü</strong> kazanırsınız.</span>
+          <span lang="en">Build a good habit or quit a bad one through a shared race. Show up with proof. If both complete every required day, <strong>both win</strong>; eligible wager duels can also earn a 1.5× Spark return.</span>
+          <span lang="tr">İyi bir alışkanlık kazan ya da kötü bir alışkanlığı birlikte bırak. Kanıtınla devam et. İkiniz de gerekli her günü tamamlarsanız <strong>ikiniz de kazanırsınız</strong>; uygun Spark bahisli düellolar ayrıca 1.5× Spark dönüşü kazanabilir.</span>
         </p>
 
         <div class="hero__cta" id="waitlist">
           <form class="waitlist-form" action="https://formspree.io/f/mbdejlkb" method="POST">
+            <label class="waitlist-form__label" for="hero-waitlist-email"><span lang="en">Email address</span><span lang="tr">E-posta adresi</span></label>
             <div class="waitlist-form__row">
-              <input type="email" name="email" class="input" placeholder="Your email address" required />
+              <input id="hero-waitlist-email" type="email" name="email" class="input" placeholder="Your email address" required />
               <button type="submit" class="btn btn--primary">
                 <span lang="en">Join the waitlist</span><span lang="tr">Bekleme listesine katıl</span>
               </button>
@@ -182,8 +183,8 @@
         <p><span lang="en">Holdout can crown one winner, but the best outcome is two people becoming more consistent together.</span><span lang="tr">Holdout tek bir kazanan çıkarabilir; ama en iyi sonuç iki kişinin birlikte daha istikrarlı hale gelmesidir.</span></p>
       </div>
       <div class="winning-grid reveal">
-        <article class="winning-card winning-card--cowin"><span class="winning-card__number">01</span><strong>1.5×</strong><h3><span lang="en">Both complete</span><span lang="tr">İki taraf da tamamlar</span></h3><p><span lang="en">Both players win. Each receives the configured reward multiplied by 1.5×.</span><span lang="tr">İki oyuncu da kazanır. Her biri belirlenen ödülü 1.5× çarpanıyla alır.</span></p><span class="winning-card__status"><span lang="en">CO-WIN</span><span lang="tr">ORTAK GALİBİYET</span></span></article>
-        <article class="winning-card"><span class="winning-card__number">02</span><strong>1</strong><h3><span lang="en">One completes</span><span lang="tr">Bir taraf tamamlar</span></h3><p><span lang="en">The player who completes wins the configured reward. The stronger finish is still recognized.</span><span lang="tr">Tamamlayan oyuncu belirlenen ödülü kazanır. Güçlü bitiriş yine ödüllendirilir.</span></p><span class="winning-card__status blue"><span lang="en">ONE WINNER</span><span lang="tr">TEK KAZANAN</span></span></article>
+        <article class="winning-card winning-card--cowin"><span class="winning-card__number">01</span><strong>1.5×</strong><h3><span lang="en">Both complete</span><span lang="tr">İki taraf da tamamlar</span></h3><p><span lang="en">Both receive a win and 100 victory XP. In eligible 7+ day wager duels, each gets their stake back plus a 50% Spark bonus when server rewards are active; open disputes or overlapping pair wagers are not eligible.</span><span lang="tr">İki taraf da galibiyet ve 100 galibiyet XP'si alır. Uygun 7+ günlük Spark bahisli düellolarda, sunucu ödülleri etkinken herkes kendi bahis payını ve %50 Spark bonusunu geri alır; açık itiraz veya aynı çiftin çakışan bahisleri uygun değildir.</span></p><span class="winning-card__status"><span lang="en">CO-WIN</span><span lang="tr">ORTAK GALİBİYET</span></span></article>
+        <article class="winning-card"><span class="winning-card__number">02</span><strong>1</strong><h3><span lang="en">One completes</span><span lang="tr">Bir taraf tamamlar</span></h3><p><span lang="en">The player who completes wins. In a wager duel, the single winner receives the full Spark pot.</span><span lang="tr">Tamamlayan oyuncu kazanır. Spark bahisli bir düelloda tek kazanan tüm Spark havuzunu alır.</span></p><span class="winning-card__status blue"><span lang="en">ONE WINNER</span><span lang="tr">TEK KAZANAN</span></span></article>
         <article class="winning-card"><span class="winning-card__number">03</span><strong>0</strong><h3><span lang="en">Neither completes</span><span lang="tr">İki taraf da tamamlamaz</span></h3><p><span lang="en">No winner reward is created. Learn, reset, and return with a stronger challenge.</span><span lang="tr">Kazanan ödülü oluşmaz. Öğren, yeniden kur ve daha güçlü bir challenge ile dön.</span></p><span class="winning-card__status orange"><span lang="en">NO WINNER</span><span lang="tr">KAZANAN YOK</span></span></article>
       </div>
       <div class="rounding-note reveal"><span aria-hidden="true">↑</span><p><strong><span lang="en">No decimal rewards.</span><span lang="tr">Ondalıklı ödül yok.</span></strong> <span lang="en">Spark and XP are always whole numbers. Any fractional result is rounded up.</span><span lang="tr">Spark ve XP her zaman tam sayıdır. Kesirli sonuçlar yukarı yuvarlanır.</span></p></div>
@@ -537,8 +538,9 @@
       </p>
       <div style="display: flex; justify-content: center; margin-top: 32px;">
         <form class="waitlist-form" action="https://formspree.io/f/mbdejlkb" method="POST">
+          <label class="waitlist-form__label" for="footer-waitlist-email"><span lang="en">Email address</span><span lang="tr">E-posta adresi</span></label>
           <div class="waitlist-form__row">
-            <input type="email" name="email" class="input" placeholder="Your email address" required />
+            <input id="footer-waitlist-email" type="email" name="email" class="input" placeholder="Your email address" required />
             <button type="submit" class="btn btn--primary">
               <span lang="en">Join the waitlist</span><span lang="tr">Bekleme listesine katıl</span>
             </button>

@@ -1361,6 +1361,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 .rounding-note strong { color: var(--text); }
 .waitlist-form__status { min-height: 20px; margin: 8px 0 0; color: var(--lime); font-size: 12px; }
 .waitlist-form__status[data-state="error"] { color: var(--orange); }
+.waitlist-form__label { display: block; margin-bottom: 8px; color: var(--text-2); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .waitlist-form button:disabled { opacity: .62; cursor: wait; transform: none; }
 
 @media (prefers-color-scheme: light) {
