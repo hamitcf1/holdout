@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOLDOUT - Build habits through 1v1 duels</title>
+  <title>HOLDOUT - Win together, or outlast your rival</title>
   <meta name="description"
-    content="Build habits through 1v1 duels or solo goals. Prove daily progress, climb weekly leagues, earn XP and Spark, and invite friends to Holdout." />
+    content="Build or quit habits through proof-based duels. Complete together for a 1.5× Co-Win reward, or outlast your rival." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#080810" />
   <link rel="canonical" href="https://holdout.hamitcf.info/" />
@@ -34,6 +34,9 @@
   <meta name="twitter:url" content="https://holdout.hamitcf.info/" />
   <meta name="twitter:image" content="https://holdout.hamitcf.info/og-home-20260723.png" />
   <meta name="twitter:image:alt" content="Holdout habit duel app with the message Duel your habit, prove it daily" />
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Holdout","url":"https://holdout.hamitcf.info/","logo":"https://holdout.hamitcf.info/assets/app-icon.png","description":"A proof-based competitive habit app where rivals can complete and win together."}
+  </script>
 
   <script>
     (function () {
@@ -47,17 +50,12 @@
   <!-- Icons for the app -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260731-1" />
+  <link rel="stylesheet" href="styles.css?v=20260804-1" />
   <link rel="icon" type="image/png" href="assets/app-icon.png" />
 </head>
 
 <body data-page="home">
+  <a class="skip-link" href="#main-content"><span lang="en">Skip to content</span><span lang="tr">İçeriğe geç</span></a>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav">
@@ -67,7 +65,8 @@
             style="color:#7BF082">OUT</span></span>
       </a>
 
-      <nav class="nav__links" aria-label="Primary">
+      <nav class="nav__links" id="primary-navigation" aria-label="Primary">
+        <a href="#winning"><span lang="en">Winning rules</span><span lang="tr">Kazanma kuralları</span></a>
         <a href="#features"><span lang="en">Features</span><span lang="tr">Özellikler</span></a>
         <a href="#how"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></a>
         <a href="#pricing"><span lang="en">Premium</span><span lang="tr">Premium</span></a>
@@ -82,7 +81,7 @@
         <a class="btn btn--primary" href="#waitlist">
           <span lang="en">Join the waitlist</span><span lang="tr">Bekleme listesine katıl</span>
         </a>
-        <button class="nav__burger" aria-label="Menu">
+        <button class="nav__burger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
@@ -91,22 +90,20 @@
     </div>
   </header>
 
+  <main id="main-content">
+
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__copy">
         <h1>
-          <span lang="en"><span style="font-family:'Bebas Neue',sans-serif">HOLD</span><span
-              style="font-family:'Bebas Neue',sans-serif;color:#7BF082">OUT.</span><br /><span class="stroke">Duel your habit.</span><br />Prove it daily.</span>
-          <span lang="tr"><span style="font-family:'Bebas Neue',sans-serif">HOLD</span><span
-              style="font-family:'Bebas Neue',sans-serif;color:#7BF082">OUT.</span><br /><span class="stroke">Alışkanlığınla düello&nbsp;et.</span><br />Her gün kanıtla.</span>
+          <span lang="en"><span class="lime">Win together,</span><br /><span class="stroke">or outlast</span><br />your rival.</span>
+          <span lang="tr"><span class="lime">Birlikte kazanın,</span><br /><span class="stroke">ya da rakibinden</span><br />uzun dayan.</span>
         </h1>
 
         <p class="hero__sub">
-          <span lang="en">Challenge a friend or go solo. Check in with a photo or a number, review each other's proof,
-            and keep the streak moving on the days motivation fades.</span>
-          <span lang="tr">Bir arkadaşına meydan oku ya da solo ilerle. Fotoğraf veya sayı ile check-in yap, kanıtları
-            karşılıklı kontrol et ve motivasyonun düştüğü günlerde bile seriyi sürdür.</span>
+          <span lang="en">Build a good habit or quit a bad one through a shared race. Show up with proof. If both of you complete the challenge, both earn a <strong>1.5× Co-Win reward</strong>.</span>
+          <span lang="tr">İyi bir alışkanlık kazan ya da kötü bir alışkanlığı birlikte bırak. Kanıtınla devam et. İkiniz de challenge'ı tamamlarsanız <strong>1.5× Ortak Galibiyet ödülü</strong> kazanırsınız.</span>
         </p>
 
         <div class="hero__cta" id="waitlist">
@@ -118,10 +115,15 @@
               </button>
             </div>
             <p class="waitlist-form__note">
-              <span lang="en">One email when access opens. Nothing else.</span>
-              <span lang="tr">Erişim açıldığında tek e-posta. Başka bir şey yok.</span>
+              <span lang="en">Release and early-access updates only. This is a waitlist, not an immediate download.</span>
+              <span lang="tr">Yalnız release ve erken erişim haberleri. Bu bir bekleme listesidir, hemen indirme değildir.</span>
             </p>
+            <p class="waitlist-form__status" aria-live="polite" data-form-status></p>
           </form>
+          <div class="store-badges store-badges--disabled" aria-label="Store availability">
+            <span class="store-badge" data-store-badge aria-disabled="true"><span class="store-badge__txt"><span class="store-badge__small"><span lang="en">Coming soon on</span><span lang="tr">Yakında</span></span><span class="store-badge__big">App Store</span></span></span>
+            <span class="store-badge" data-store-badge aria-disabled="true"><span class="store-badge__txt"><span class="store-badge__small"><span lang="en">Coming soon on</span><span lang="tr">Yakında</span></span><span class="store-badge__big">Google Play</span></span></span>
+          </div>
         </div>
       </div>
 
@@ -130,10 +132,10 @@
         <div class="product-stage">
           <div class="phone phone--hero">
             <div class="phone__screen phone__screen--hero">
-              <img class="hero-mockup" lang="en" src="./assets/mockup-full.png?v=20260729"
-                alt="Holdout app home screen in English">
-              <img class="hero-mockup" lang="tr" src="./assets/mockup-full-tr.png?v=20260729"
-                alt="Holdout uygulamasının Türkçe ana ekranı">
+              <img class="hero-mockup" lang="en" src="./assets/mockup-full.webp?v=20260804" width="698" height="1516" fetchpriority="high" decoding="async"
+                alt="Current Holdout app home and duel screen in English">
+              <img class="hero-mockup" lang="tr" src="./assets/mockup-full-tr.webp?v=20260804" width="698" height="1516" loading="lazy" decoding="async"
+                alt="Güncel Türkçe Holdout ana sayfa ve düello ekranı">
             </div>
           </div>
         </div>
@@ -168,6 +170,23 @@
           <div class="l"><span lang="en">Localized for English and Turkish</span><span lang="tr">İngilizce ve Türkçe lokalize</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== WINNING RULES ===================== -->
+  <section class="section winning" id="winning">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span lang="en">The winning contract</span><span lang="tr">Kazanma sözleşmesi</span></span>
+        <h2 class="display" style="margin-top:16px"><span lang="en">Competition starts it.<br><span class="lime">Completion wins it.</span></span><span lang="tr">Rekabet başlatır.<br><span class="lime">Tamamlamak kazandırır.</span></span></h2>
+        <p><span lang="en">Holdout can crown one winner, but the best outcome is two people becoming more consistent together.</span><span lang="tr">Holdout tek bir kazanan çıkarabilir; ama en iyi sonuç iki kişinin birlikte daha istikrarlı hale gelmesidir.</span></p>
+      </div>
+      <div class="winning-grid reveal">
+        <article class="winning-card winning-card--cowin"><span class="winning-card__number">01</span><strong>1.5×</strong><h3><span lang="en">Both complete</span><span lang="tr">İki taraf da tamamlar</span></h3><p><span lang="en">Both players win. Each receives the configured reward multiplied by 1.5×.</span><span lang="tr">İki oyuncu da kazanır. Her biri belirlenen ödülü 1.5× çarpanıyla alır.</span></p><span class="winning-card__status"><span lang="en">CO-WIN</span><span lang="tr">ORTAK GALİBİYET</span></span></article>
+        <article class="winning-card"><span class="winning-card__number">02</span><strong>1</strong><h3><span lang="en">One completes</span><span lang="tr">Bir taraf tamamlar</span></h3><p><span lang="en">The player who completes wins the configured reward. The stronger finish is still recognized.</span><span lang="tr">Tamamlayan oyuncu belirlenen ödülü kazanır. Güçlü bitiriş yine ödüllendirilir.</span></p><span class="winning-card__status blue"><span lang="en">ONE WINNER</span><span lang="tr">TEK KAZANAN</span></span></article>
+        <article class="winning-card"><span class="winning-card__number">03</span><strong>0</strong><h3><span lang="en">Neither completes</span><span lang="tr">İki taraf da tamamlamaz</span></h3><p><span lang="en">No winner reward is created. Learn, reset, and return with a stronger challenge.</span><span lang="tr">Kazanan ödülü oluşmaz. Öğren, yeniden kur ve daha güçlü bir challenge ile dön.</span></p><span class="winning-card__status orange"><span lang="en">NO WINNER</span><span lang="tr">KAZANAN YOK</span></span></article>
+      </div>
+      <div class="rounding-note reveal"><span aria-hidden="true">↑</span><p><strong><span lang="en">No decimal rewards.</span><span lang="tr">Ondalıklı ödül yok.</span></strong> <span lang="en">Spark and XP are always whole numbers. Any fractional result is rounded up.</span><span lang="tr">Spark ve XP her zaman tam sayıdır. Kesirli sonuçlar yukarı yuvarlanır.</span></p></div>
     </div>
   </section>
 
@@ -229,9 +248,7 @@
             <div class="ico"><ion-icon name="person-add-outline"></ion-icon></div>
             <div class="feature-text">
               <h3><span lang="en">Referral crew rewards</span><span lang="tr">Referans ekibi ödülleri</span></h3>
-              <p><span lang="en">Invite friends with a personal link. Qualified referrals unlock Spark milestones and
-                  a 30-day Premium reward at ten friends.</span><span lang="tr">Kişisel linkinle arkadaş davet et.
-                  Uygun referanslar Spark kilometre taşlarını, on arkadaşta 30 günlük Premium'u açar.</span></p>
+              <p><span lang="en">Invite friends with a personal link or six-character referral code. Qualified new members advance referral milestones without a stale static reward promise.</span><span lang="tr">Arkadaşlarını kişisel linkin veya 6 karakter referans kodunla davet et. Uygun yeni üyeler, eskiyen sabit bir ödül vaadi olmadan referans kilometre taşlarını ilerletir.</span></p>
             </div>
           </div>
         </div>
@@ -420,20 +437,20 @@
       <div class="section-head center reveal">
         <span class="eyebrow"><span lang="en">Premium</span><span lang="tr">Premium</span></span>
         <h2 class="display" style="margin-top:16px">
-          <span lang="en">Start free.<br />Upgrade only if you need more.</span>
-          <span lang="tr">Ücretsiz başla.<br />Daha fazlası gerekirse yükselt.</span>
+          <span lang="en">Start free.<br /><span class="lime">Store details are coming soon.</span></span>
+          <span lang="tr">Ücretsiz başla.<br /><span class="lime">Mağaza detayları yakında.</span></span>
         </h2>
       </div>
 
-      <div class="pricing-toolbar reveal">
+      <div class="pricing-toolbar reveal" hidden>
         <span class="pricing-toolbar__label">
           <span lang="en">Display currency</span>
           <span lang="tr">Gösterim para birimi</span>
         </span>
         <div class="currency-toggle" role="group" aria-label="Display currency">
-          <button type="button" data-currency="USD" class="active" aria-pressed="true">USD</button>
-          <button type="button" data-currency="EUR" aria-pressed="false">EUR</button>
-          <button type="button" data-currency="TRY" aria-pressed="false">TRY</button>
+          <button type="button" class="active" aria-pressed="true">USD</button>
+          <button type="button" aria-pressed="false">EUR</button>
+          <button type="button" aria-pressed="false">TRY</button>
         </div>
       </div>
 
@@ -443,7 +460,7 @@
           <div lang="en" class="plan__name">Free</div>
           <div lang="tr" class="plan__name">Ücretsiz</div>
           <div class="plan__tagline"><span lang="en">Core features for everyday use.</span><span lang="tr">Günlük kullanım için temel özellikler.</span></div>
-          <div class="plan__price"><span class="amt" data-site-price="free">$0</span><span lang="en"
+          <div class="plan__price"><span class="amt">0</span><span lang="en"
               class="per">forever</span><span lang="tr" class="per">sonsuza dek</span></div>
           <ul class="feature-list">
             <li><span lang="en">Up to 2 active duels</span><span lang="tr">2 aktif düelloya kadar</span></li>
@@ -467,7 +484,7 @@
           <div class="plan__name lime">Premium</div>
           <div class="plan__tagline"><span lang="en">Unlimited active duels, no ads, and deeper stats.</span><span lang="tr">Sınırsız aktif düello, reklamsız kullanım ve ayrıntılı istatistikler.</span></div>
 
-          <div class="bill-toggle">
+          <div class="bill-toggle" hidden>
             <button type="button" data-plan="monthly"><span lang="en">Monthly</span><span
                 lang="tr">Aylık</span></button>
             <button type="button" data-plan="yearly" class="active"><span lang="en">Yearly</span><span
@@ -477,15 +494,14 @@
           </div>
 
           <div class="plan__price" data-price="monthly" style="display:none">
-            <span class="amt lime" data-site-price="monthly">$2.99</span><span class="per">/ <span lang="en">month</span><span
+            <span class="amt lime"><span lang="en">Coming soon</span><span lang="tr">Yakında</span></span><span class="per">/ <span lang="en">month</span><span
                 lang="tr">ay</span></span>
           </div>
           <div class="plan__price" data-price="yearly">
-            <span class="amt lime" data-site-price="yearly">$17.99</span><span class="per">/ <span lang="en">year</span><span
-                lang="tr">yıl</span></span>
+            <span class="amt lime"><span lang="en">Coming soon</span><span lang="tr">Yakında</span></span>
           </div>
           <div class="plan__price" data-price="lifetime" style="display:none">
-            <span class="amt lime" data-site-price="lifetime">$24.99</span><span class="per"><span lang="en">one-time</span><span lang="tr">tek
+            <span class="amt lime"><span lang="en">Coming soon</span><span lang="tr">Yakında</span></span><span class="per"><span lang="en">one-time</span><span lang="tr">tek
                 seferlik</span></span>
           </div>
 
@@ -497,12 +513,11 @@
             <li><span lang="en">Advanced stats &amp; history</span><span lang="tr">Gelişmiş istatistik &amp; geçmiş</span></li>
             <li><span lang="en">Completely ad-free</span><span lang="tr">Tamamen reklamsız</span></li>
             <li><span lang="en">Higher streak freeze capacity</span><span lang="tr">Daha yüksek streak freeze kapasitesi</span></li>
-            <li><span lang="en">Billing Spark gifts: 150 monthly, 1000 yearly, 2500 lifetime</span><span lang="tr">Faturalama Spark hediyesi: aylık 150, yıllık 1000, ömür boyu 2500</span></li>
+            <li><span lang="en">Store-backed plans and benefits shown from the app at release</span><span lang="tr">Mağaza tabanlı plan ve faydalar release sırasında uygulamadan gösterilir</span></li>
           </ul>
           <a class="btn btn--primary btn--block" href="#waitlist"><span lang="en">Join the waitlist</span><span
               lang="tr">Bekleme listesine katıl</span></a>
-          <div class="plan__note"><span lang="en">Website prices are indicative. App Store or Google Play shows and charges your storefront's localized price. Cancel anytime in store settings.</span><span
-              lang="tr">Website fiyatları gösterim amaçlıdır. App Store veya Google Play, mağaza bölgenize özel yerelleştirilmiş fiyatı gösterir ve tahsil eder. Mağaza ayarlarından istediğiniz an iptal edebilirsiniz.</span></div>
+          <div class="plan__note"><span lang="en">Official products, trials, and localized prices will appear only through App Store or Google Play when release listings are ready.</span><span lang="tr">Resmi ürünler, denemeler ve yerelleştirilmiş fiyatlar yalnız release listeleri hazır olduğunda App Store veya Google Play üzerinden görünür.</span></div>
         </div>
       </div>
     </div>
@@ -532,10 +547,12 @@
             <span lang="en">We'll email you when new slots open. No spam.</span>
             <span lang="tr">Yeni slot açıldığında haber veririz. Spam yok.</span>
           </p>
+          <p class="waitlist-form__status" aria-live="polite" data-form-status></p>
         </form>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -552,7 +569,7 @@
           </p>
         </div>
         <div>
-          <h4><span lang="en">Product</span><span lang="tr">Ürün</span></h4>
+          <h3><span lang="en">Product</span><span lang="tr">Ürün</span></h3>
           <ul>
             <li><a href="#features"><span lang="en">Features</span><span lang="tr">Özellikler</span></a></li>
             <li><a href="#how"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></a></li>
@@ -561,20 +578,23 @@
           </ul>
         </div>
         <div>
-          <h4><span lang="en">Support</span><span lang="tr">Destek</span></h4>
+          <h3><span lang="en">Support</span><span lang="tr">Destek</span></h3>
           <ul>
             <li><a href="support.html"><span lang="en">Help &amp; FAQ</span><span lang="tr">Yardım &amp; SSS</span></a>
             </li>
+            <li><a href="i/"><span lang="en">Duel invite</span><span lang="tr">Düello daveti</span></a></li>
+            <li><a href="referral/"><span lang="en">Referral</span><span lang="tr">Referans</span></a></li>
             <li><a href="mailto:support@holdout.hamitcf.info">support@holdout.hamitcf.info</a></li>
           </ul>
         </div>
         <div>
-          <h4><span lang="en">Legal</span><span lang="tr">Yasal</span></h4>
+          <h3><span lang="en">Legal</span><span lang="tr">Yasal</span></h3>
           <ul>
             <li><a href="privacy.html"><span lang="en">Privacy Policy</span><span lang="tr">Gizlilik
                   Politikası</span></a></li>
             <li><a href="terms.html"><span lang="en">Terms of Service</span><span lang="tr">Kullanım Şartları</span></a>
             </li>
+            <li><a href="delete-account.html"><span lang="en">Delete account</span><span lang="tr">Hesabı sil</span></a></li>
           </ul>
         </div>
       </div>
@@ -594,7 +614,7 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260731-1"></script>
+  <script src="app.js?v=20260804-1"></script>
 </body>
 
 </html>
