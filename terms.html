@@ -37,10 +37,7 @@
       } catch (e) { document.documentElement.classList.add("lang-en"); }
     })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260722-3" />
+  <link rel="stylesheet" href="styles.css?v=20260804-1" />
   <link rel="icon" type="image/png" href="assets/app-icon.png" />
 </head>
 <body data-page="legal">
@@ -51,7 +48,7 @@
       <a class="brand" href="index.html">
         <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:#fff">HOLD<span style="color:#7BF082">OUT</span></span>
       </a>
-      <nav class="nav__links" aria-label="Primary">
+      <nav class="nav__links" id="primary-navigation" aria-label="Primary">
         <a href="index.html#features"><span lang="en">Features</span><span lang="tr">Özellikler</span></a>
         <a href="index.html#how"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></a>
         <a href="index.html#pricing"><span lang="en">Premium</span><span lang="tr">Premium</span></a>
@@ -63,7 +60,7 @@
           <button type="button" data-lang="tr">TR</button>
         </div>
         <a class="btn btn--primary" href="index.html#waitlist"><span lang="en">Join the waitlist</span><span lang="tr">Bekleme listesine katıl</span></a>
-        <button class="nav__burger" aria-label="Menu">
+        <button class="nav__burger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
       </div>
@@ -244,6 +241,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260722"></script>
+  <script src="app.js?v=20260804-1"></script>
 </body>
 </html>

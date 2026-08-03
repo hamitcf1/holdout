@@ -3,6 +3,11 @@
    Design system sourced from the Obsidian vault:
    "Estetik & Moodboard" — Competitive / Playful / Dark Energy
    ============================================================ */
+@font-face { font-family: "Bebas Neue"; src: url("assets/fonts/BebasNeue-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("assets/fonts/PlusJakartaSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("assets/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("assets/fonts/PlusJakartaSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+
 :root {
   /* Shared Holdout app palette */
   color-scheme: dark;
@@ -13,8 +18,8 @@
   --orange: #FF6B35;
   --blue: #4E8FFF;
   --text: #EEEEFF;
-  --text-2: #7070A0;
-  --text-muted: #3A3A60;
+  --text-2: #8A8AB0;
+  --text-muted: #8585AA;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.16);
   /* Effects */
@@ -964,7 +969,7 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .footer__brand p { color: var(--text-2); font-size: 14px; max-width: 280px; }
 
-.footer h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); margin-bottom: 16px; }
+.footer h3 { font-family: var(--font-body); font-size: 13px; line-height: 1.2; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); margin-bottom: 16px; }
 
 .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
 
@@ -1290,4 +1295,101 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
   .phone { transform: none; }
 
+}
+
+/* HLD-127: current product contract layered onto the existing site */
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #061206;
+  background: var(--lime);
+  transform: translateY(-150%);
+  transition: transform .18s ease;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.nav__burger,
+.lang-toggle button,
+.faq__q,
+.footer a { min-height: 44px; }
+
+.store-badges--disabled { margin-top: 18px; }
+.store-badges--disabled .store-badge {
+  opacity: .62;
+  border-style: dashed;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.winning { background: var(--surface); }
+.winning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+}
+.winning-card {
+  position: relative;
+  min-height: 370px;
+  padding: clamp(26px, 4vw, 44px);
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+}
+.winning-card:last-child { border-right: 0; }
+.winning-card--cowin { background: linear-gradient(145deg, rgba(123,240,130,.13), var(--bg) 72%); }
+.winning-card__number { color: var(--text-muted); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.winning-card > strong { display: block; margin-top: 38px; color: var(--lime); font: 400 72px/.9 var(--font-display); }
+.winning-card:not(.winning-card--cowin) > strong { color: var(--text-2); }
+.winning-card h3 { margin-top: 24px; font: 400 32px/1 var(--font-display); text-transform: uppercase; }
+.winning-card p { margin-top: 15px; color: var(--text-2); font-size: 14px; }
+.winning-card__status { position: absolute; right: 28px; bottom: 25px; left: 28px; padding-top: 13px; border-top: 1px solid var(--border); color: var(--lime); font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+.winning-card__status.blue { color: var(--blue); }
+.winning-card__status.orange { color: var(--orange); }
+.rounding-note { display: flex; align-items: center; gap: 18px; margin-top: 18px; padding: 22px 26px; border-left: 3px solid var(--blue); background: var(--card); }
+.rounding-note > span { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border: 1px solid var(--blue); border-radius: 50%; color: var(--blue); font-size: 22px; }
+.rounding-note p { margin: 0; color: var(--text-2); font-size: 14px; }
+.rounding-note strong { color: var(--text); }
+.waitlist-form__status { min-height: 20px; margin: 8px 0 0; color: var(--lime); font-size: 12px; }
+.waitlist-form__status[data-state="error"] { color: var(--orange); }
+.waitlist-form__label { display: block; margin-bottom: 8px; color: var(--text-2); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.waitlist-form button:disabled { opacity: .62; cursor: wait; transform: none; }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #F5F5FA;
+    --surface: #FFFFFF;
+    --card: #EBEBEF;
+    --lime: #56C45D;
+    --orange: #E0521F;
+    --blue: #3A76E0;
+    --text: #080810;
+    --text-2: #505080;
+    --text-muted: #69698F;
+    --border: rgba(8,8,16,.11);
+    --border-strong: rgba(8,8,16,.22);
+  }
+  body { background: var(--bg); color: var(--text); }
+  .nav { background: rgba(245,245,250,.82); }
+  .brand > span, .footer .brand > span { color: #080810 !important; }
+  .hero::before { opacity: .35; }
+  .phone, .shot, .feature, .plan, .faq, .waitlist-form { box-shadow: 0 20px 60px rgba(25,25,55,.12); }
+  .winning-card { background: var(--bg); }
+  .winning-card--cowin { background: linear-gradient(145deg, rgba(86,196,93,.15), var(--bg) 72%); }
+}
+
+@media (max-width: 820px) {
+  .winning-grid { grid-template-columns: 1fr; }
+  .winning-card { min-height: 320px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .winning-card:last-child { border-bottom: 0; }
 }

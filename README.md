@@ -1,6 +1,6 @@
 # Holdout Website
 
-Marketing, support, and legal website for **Holdout** — the habit tracker that turns discipline into a duel. Challenge a friend, check in every day, and whoever breaks the streak first loses.
+Marketing, support, and legal website for **Holdout** — the proof-based habit arena where rivals can also complete and win together.
 
 Live domain: **holdout.hamitcf.info**
 
@@ -8,7 +8,7 @@ Live domain: **holdout.hamitcf.info**
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Landing page (hero, features, how it works, pricing, download) |
+| `index.html` | Waitlist-first landing page with Co-Win rules, current features, and release posture |
 | `support.html` | Support center / FAQ — App Store **Support URL** |
 | `privacy.html` | Privacy Policy — App Store requirement |
 | `terms.html` | Terms of Service (incl. auto-renewable subscription disclosure) |
@@ -28,6 +28,15 @@ Live domain: **holdout.hamitcf.info**
 - Fully static — no build step, no dependencies
 - Responsive, dark "competitive energy" design
 - Fonts: Bebas Neue + Plus Jakarta Sans
+- Store badges remain disabled and marked Coming soon until official listings exist
+
+## Verify
+
+```bash
+node scripts/verify-site.mjs
+```
+
+The verifier checks product claims, EN/TR Co-Win and reward rules, waitlist/store posture, internal links/assets, accessibility hooks, metadata, and invite/referral fallback contracts.
 
 ## Run locally
 
