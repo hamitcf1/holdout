@@ -186,6 +186,16 @@
     counters.forEach(function (el) { co.observe(el); });
   }
 
+  /* ---------- Apple Design: Fluid Touch & Pointer Interactions ---------- */
+  // Apple Rule 1: Respond on pointer-down instantly with 1:1 tactile feedback
+  document.querySelectorAll(".btn, .store-badge, .feature, .plan, .winning-card, .brand").forEach(function (el) {
+    el.addEventListener("pointerdown", function (e) {
+      if (el.setPointerCapture && e.pointerId) {
+        try { el.setPointerCapture(e.pointerId); } catch (err) {}
+      }
+    }, { passive: true });
+  });
+
   /* ---------- Footer year ---------- */
   var yr = document.querySelector("[data-year]");
   if (yr) {

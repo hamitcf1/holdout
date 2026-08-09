@@ -9,37 +9,53 @@
 @font-face { font-family: "Plus Jakarta Sans"; src: url("assets/fonts/PlusJakartaSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
-  /* Shared Holdout app palette */
+  /* Shared Holdout app palette with translucent depth layers */
   color-scheme: dark;
   --bg: #080810;
-  --surface: #0F0F1C;
-  --card: #141424;
+  --surface: rgba(15, 15, 28, 0.75);
+  --surface-solid: #0F0F1C;
+  --card: rgba(20, 20, 36, 0.65);
+  --card-solid: #141424;
+  --card-hover: rgba(28, 28, 48, 0.75);
   --lime: #7BF082;
   --orange: #FF6B35;
   --blue: #4E8FFF;
   --text: #EEEEFF;
-  --text-2: #8A8AB0;
+  --text-2: #9A9AC0;
   --text-muted: #8585AA;
   --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  
+  /* Materials & Depth (Apple Glassmorphism) */
+  --blur-nav: blur(20px) saturate(180%);
+  --blur-card: blur(16px) saturate(160%);
+  
   /* Effects */
-  --glow-lime: 0 0 16px rgba(123, 240, 130, 0.30);
-  --glow-lime-lg: 0 0 40px rgba(123, 240, 130, 0.35);
+  --glow-lime: 0 0 16px rgba(123, 240, 130, 0.25);
+  --glow-lime-lg: 0 8px 32px rgba(123, 240, 130, 0.35);
   --glow-orange: 0 0 24px rgba(255, 107, 53, 0.30);
-  /* Radii (vault: 18–22px) */
-  --r-sm: 12px;
-  --r: 24px;
-  --r-lg: 32px;
-  --r-xl: 40px;
+  --shadow-card: 0 12px 36px -8px rgba(0, 0, 0, 0.45);
+  
+  /* Radii (Apple Fluid feel: rounded surfaces) */
+  --r-sm: 14px;
+  --r: 22px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+  
   /* Layout */
   --maxw: 1180px;
   --gutter: 24px;
+  
   /* Type */
   --font-display: "Bebas Neue", "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  /* Motion */
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-reveal: cubic-bezier(0.77, 0, 0.175, 1);
+  
+  /* Apple Spring Animations & Curves */
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 
@@ -162,11 +178,16 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   border-radius: var(--r);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease;
+  /* Apple Fluid Motion: instant press response, springy release */
+  transition: transform 0.3s var(--spring-bounce), box-shadow 0.3s var(--spring-smooth), background 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
 }
 
-.btn:active { transform: translateY(1px); }
+.btn:active {
+  /* Apple principle: Respond on pointer-down instantly with continuous feedback */
+  transform: scale(0.96) translateY(1px);
+  transition: transform 0.08s ease-out;
+}
 
 .btn--primary {
   background: var(--lime);
@@ -177,12 +198,14 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
 .btn--primary:hover { box-shadow: var(--glow-lime-lg); transform: translateY(-2px); }
 
 .btn--ghost {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-color: var(--border-strong);
   color: var(--text);
 }
 
-.btn--ghost:hover { border-color: var(--lime); color: var(--lime); }
+.btn--ghost:hover { border-color: var(--lime); color: var(--lime); background: rgba(123, 240, 130, 0.06); }
 
 .btn--block { width: 100%; }
 
@@ -200,9 +223,11 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   gap: 12px;
   padding: 11px 20px 11px 18px;
   border-radius: 14px;
-  background: #050509;
+  background: rgba(15, 15, 28, 0.6);
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
   border: 1px solid var(--border-strong);
-  transition: border-color .2s ease, transform .15s ease, box-shadow .25s ease;
+  transition: border-color .2s ease, transform .3s var(--spring-bounce), box-shadow .25s ease;
   min-width: 190px;
 }
 
@@ -210,6 +235,11 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   border-color: var(--lime);
   transform: translateY(-2px);
   box-shadow: var(--glow-lime);
+}
+
+.store-badge:active {
+  transform: scale(0.97);
+  transition: transform 0.08s ease-out;
 }
 
 .store-badge svg { width: 26px; height: 26px; flex: none; }
@@ -226,10 +256,11 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(8, 8, 16, 0.72);
-  backdrop-filter: saturate(140%) blur(14px);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
-  border-bottom: 1px solid var(--border);
+  /* Apple Glassmorphism Toolbar with light catching border */
+  background: rgba(8, 8, 16, 0.65);
+  backdrop-filter: var(--blur-nav);
+  -webkit-backdrop-filter: var(--blur-nav);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .nav__inner {
@@ -245,6 +276,12 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   font-size: 30px;
   letter-spacing: 1.5px;
   color: var(--text);
+  transition: transform 0.3s var(--spring-bounce);
+}
+
+.brand:active {
+  transform: scale(0.95);
+  transition: transform 0.08s ease-out;
 }
 
 .brand .b-out { color: var(--lime); }
@@ -262,7 +299,7 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   font-size: 15px;
   font-weight: 500;
   color: var(--text-2);
-  transition: color .2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .nav__links a:hover { color: var(--text); }
@@ -630,22 +667,34 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 .feature {
   position: relative;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: 4px;
-  transition: transform 200ms var(--ease-out), box-shadow 250ms var(--ease-out);
+  /* Apple Spring Animation on hover */
+  transition: transform 0.35s var(--spring-bounce), box-shadow 0.35s var(--spring-smooth), border-color 0.2s ease;
 }
 
 .feature > .feature-inner {
   background: var(--card);
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
   border-radius: calc(var(--r-lg) - 4px);
   padding: 22px 18px 20px;
   height: 100%;
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.05);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 
-.feature:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 24px 50px -30px rgba(0,0,0,.8); }
+.feature:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.feature:active {
+  transform: scale(0.98);
+  transition: transform 0.08s ease-out;
+}
 
 /* Staggering reveals */
 .feature-grid .feature.reveal { transition-delay: 0ms; }
@@ -1285,16 +1334,36 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
 
 }
 
-/* Reduced motion */
+/* Apple Design: Reduced Motion & Transparency Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 
   .reveal { opacity: 1 !important; transform: none !important; }
 
   .hero__cue { animation: none; }
 
   .phone { transform: none; }
+}
 
+@media (prefers-reduced-transparency: reduce) {
+  .nav {
+    background: var(--bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .feature > .feature-inner,
+  .store-badge,
+  .btn--ghost {
+    background: var(--card-solid) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
 /* HLD-127: current product contract layered onto the existing site */
