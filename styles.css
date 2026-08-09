@@ -299,20 +299,32 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   font-size: 15px;
   font-weight: 500;
   color: var(--text-2);
-  transition: color 0.2s ease, opacity 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.3s var(--spring-bounce);
 }
 
-.nav__links a:hover { color: var(--text); }
+.nav__links a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav__links a:active {
+  transform: scale(0.95);
+  transition: transform 0.08s ease-out;
+}
 
 .nav__actions { display: flex; align-items: center; gap: 14px; }
 
-/* Language toggle */
+/* Language toggle (Apple Segmented Control) */
 .lang-toggle {
   display: inline-flex;
   padding: 3px;
   border-radius: 999px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(20, 20, 36, 0.7);
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-strong);
 }
 
 .lang-toggle button {
@@ -326,23 +338,37 @@ h2.display { font-size: clamp(34px, 5.5vw, 62px); }
   padding: 6px 12px;
   border-radius: 999px;
   cursor: pointer;
-  transition: color .2s ease, background .2s ease;
+  transition: color 0.2s ease, background 0.25s var(--spring-smooth), transform 0.3s var(--spring-bounce), box-shadow 0.2s ease;
+}
+
+.lang-toggle button:active {
+  transform: scale(0.92);
+  transition: transform 0.08s ease-out;
 }
 
 html.lang-en .lang-toggle button[data-lang="en"],
 html.lang-tr .lang-toggle button[data-lang="tr"] {
   background: var(--lime);
   color: #061206;
+  box-shadow: 0 2px 8px rgba(123, 240, 130, 0.3);
 }
 
 .nav__burger {
   display: none;
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
   width: 42px; height: 42px;
   cursor: pointer;
   color: var(--text);
+  transition: transform 0.3s var(--spring-bounce), border-color 0.2s ease;
+}
+
+.nav__burger:active {
+  transform: scale(0.92);
+  transition: transform 0.08s ease-out;
 }
 
 
@@ -1314,11 +1340,15 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   .nav.open .nav__links {
     display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
     position: absolute; top: 60px; left: 0; right: 0;
-    background: var(--surface); border-bottom: 1px solid var(--border);
+    background: rgba(15, 15, 28, 0.88);
+    backdrop-filter: var(--blur-nav);
+    -webkit-backdrop-filter: var(--blur-nav);
+    border-bottom: 1px solid var(--border-light);
     padding: 18px var(--gutter); margin: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   }
 
-  .nav.open .nav__links a { padding: 10px 0; width: 100%; }
+  .nav.open .nav__links a { padding: 12px 16px; width: 100%; border-radius: 12px; }
 
   .hero__grid { grid-template-columns: minmax(0, 1fr); min-width: 0; text-align: center; }
 
