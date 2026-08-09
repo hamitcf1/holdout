@@ -634,6 +634,36 @@ html.lang-tr .lang-toggle button[data-lang="tr"] {
   background: var(--lime); color: #061206; font-weight: 700;
   border-radius: var(--r); padding: 13px; font-size: 14px;
   box-shadow: var(--glow-lime);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s var(--spring-bounce), box-shadow 0.3s var(--spring-smooth), background 0.2s ease;
+}
+
+.app-cta--demo:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-lime-lg);
+}
+
+.app-cta--demo:active {
+  transform: scale(0.95);
+  transition: transform 0.08s ease-out;
+}
+
+.invite-link--demo {
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s var(--spring-bounce), background 0.2s ease, border-color 0.2s ease;
+}
+
+.invite-link--demo:hover {
+  background: rgba(255, 107, 53, 0.15) !important;
+  border-color: rgba(255, 107, 53, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.invite-link--demo:active {
+  transform: scale(0.97);
+  transition: transform 0.08s ease-out;
 }
 
 
